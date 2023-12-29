@@ -32,7 +32,7 @@ struct Character {
     init(model: CharacterModel) {
         self.name = model.name
         self.height = model.height
-        self.weight = model.height
+        self.weight = model.weight
         self.hairColor = model.hairColor
         self.skinColor = model.skinColor
         self.eyesColor = model.eyesColor
