@@ -1,6 +1,6 @@
 import Foundation
 
-class MockCharacterModel: StructGenerator {
+class MockCharacterModelGenerator: StructGenerator {
     var generatorCount: Int
     
     init() {
