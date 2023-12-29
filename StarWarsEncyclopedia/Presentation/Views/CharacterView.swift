@@ -12,8 +12,26 @@ struct CharacterView: View {
     }
     
     private var mainView: some View {
+        ZStack {
+            backgroundView()
+                .ignoresSafeArea()
+            VStack {
+                characterAvatarView()
+                characterInfoView()
+            }
+        }
+    }
+    
+    private func backgroundView() -> some View {
+        LinearGradient(gradient: Gradient(colors: [Color.black,
+                                                   Color.teal,
+                                                   Color.white]),
+                       startPoint: .top,
+                       endPoint: .bottom)
+    }
+    
+    private func characterInfoView() -> some View {
         VStack(alignment: .leading) {
-            Image(systemName: "person.fill")
             Text("Name: \(character.name)")
             Text("Gender: \(character.gender)")
             Text("Birth year: \(character.birthYear)")
@@ -23,6 +41,14 @@ struct CharacterView: View {
             Text("Skin color: \(character.skinColor)")
             Text("Eyes color: \(character.eyesColor)")
         }
+    }
+    
+    private func characterAvatarView() -> some View {
+        Image(systemName: "person.fill")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 250, height: 250)
+            .clipShape(Circle())
     }
 }
 

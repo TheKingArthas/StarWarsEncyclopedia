@@ -104,13 +104,13 @@
 		60D9F9142AE1F9C000B80E77 /* StarWarsEncyclopedia */ = {
 			isa = PBXGroup;
 			children = (
-				C7F7C05C2B3E905F006C6B5F /* Presentation */,
+				60D9F9172AE1F9C000B80E77 /* ContentView.swift */,
 				C7F7C0552B3E8AC0006C6B5F /* Mocks */,
 				C7F7C0522B3E8876006C6B5F /* Models */,
-				60D9F9152AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift */,
-				60D9F9172AE1F9C000B80E77 /* ContentView.swift */,
-				60D9F9192AE1F9C300B80E77 /* Assets.xcassets */,
+				C7F7C05C2B3E905F006C6B5F /* Presentation */,
 				60D9F91B2AE1F9C300B80E77 /* Preview Content */,
+				C7F7C0602B3E9632006C6B5F /* Resources */,
+				60D9F9152AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift */,
 			);
 			path = StarWarsEncyclopedia;
 			sourceTree = "<group>";
@@ -172,6 +172,14 @@
 				C7F7C05E2B3E9073006C6B5F /* CharacterView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C7F7C0602B3E9632006C6B5F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				60D9F9192AE1F9C300B80E77 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
