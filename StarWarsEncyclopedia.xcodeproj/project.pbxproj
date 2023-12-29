@@ -14,6 +14,7 @@
 		60D9F9272AE1F9C400B80E77 /* StarWarsEncyclopediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9262AE1F9C400B80E77 /* StarWarsEncyclopediaTests.swift */; };
 		60D9F9312AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */; };
 		60D9F9332AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */; };
+		C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		60D9F92C2AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsEncyclopediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITests.swift; sourceTree = "<group>"; };
 		60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		60D9F9142AE1F9C000B80E77 /* StarWarsEncyclopedia */ = {
 			isa = PBXGroup;
 			children = (
+				C7F7C0522B3E8876006C6B5F /* Models */,
 				60D9F9152AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift */,
 				60D9F9172AE1F9C000B80E77 /* ContentView.swift */,
 				60D9F9192AE1F9C300B80E77 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */,
 			);
 			path = StarWarsEncyclopediaUITests;
+			sourceTree = "<group>";
+		};
+		C7F7C0522B3E8876006C6B5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */,
 				60D9F9182AE1F9C000B80E77 /* ContentView.swift in Sources */,
 				60D9F9162AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift in Sources */,
 			);
