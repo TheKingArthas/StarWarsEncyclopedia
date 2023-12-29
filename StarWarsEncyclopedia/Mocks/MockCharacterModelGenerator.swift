@@ -18,6 +18,6 @@ class MockCharacterModelGenerator: StructGenerator {
                        gender: "male",
                        homeWorld: "Tatooine",
                        species: "human",
-                       imagePaths: "https://www.fakePath.com/luke_skywalker")
+                       avatarImagePath: "https://www.fakePath.com/luke_skywalker")
     }
 }

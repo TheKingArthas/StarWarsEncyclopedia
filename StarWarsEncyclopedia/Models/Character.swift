@@ -15,9 +15,7 @@ struct Character {
     var eyesColor: String
     var birthYear: String
     var gender: Gender
-    var homeWorld: String
-    var species: String
-    var imagePaths: String
+    var avatarImagePath: String
     
     private static func genderFromString(_ genderAsString: String) -> Gender {
         if genderAsString == "male" {
@@ -38,8 +36,6 @@ struct Character {
         self.eyesColor = model.eyesColor
         self.birthYear = model.birthYear
         self.gender = Self.genderFromString(model.gender)
-        self.homeWorld = model.homeWorld
-        self.species = model.species
-        self.imagePaths = model.imagePaths
+        self.avatarImagePath = model.avatarImagePath
     }
 }

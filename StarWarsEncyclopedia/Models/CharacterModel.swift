@@ -11,5 +11,5 @@ struct CharacterModel {
     var gender: String
     var homeWorld: String
     var species: String
-    var imagePaths: String
+    var avatarImagePath: String
 }
