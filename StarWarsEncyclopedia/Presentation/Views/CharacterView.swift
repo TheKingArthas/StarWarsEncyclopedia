@@ -31,9 +31,12 @@ struct CharacterView: View {
     }
     
     private func characterInfoView() -> some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             Text("Name: \(character.name)")
-            Text("Gender: \(character.gender)")
+            HStack {
+                Text("Gender: ")
+                genderImageView(character.gender)
+            }
             Text("Birth year: \(character.birthYear)")
             Text("Height: \(character.height)")
             Text("Weight: \(character.weight)")
@@ -47,8 +50,26 @@ struct CharacterView: View {
         Image(systemName: "person.fill")
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(width: 250, height: 250)
+            .frame(width: 256, height: 256)
             .clipShape(Circle())
+    }
+    
+    @ViewBuilder
+    private func genderImageView(_ gender: Gender) -> some View {
+        let frameSize: CGFloat = 24
+        
+        switch gender {
+        case .male:
+            Image("gender_male")
+                .resizable()
+                .frame(width: frameSize, height: frameSize)
+        case .female:
+            Image("gender_female")
+                .resizable()
+                .frame(width: frameSize, height: frameSize)
+        default:
+            EmptyView()
+        }
     }
 }
 
