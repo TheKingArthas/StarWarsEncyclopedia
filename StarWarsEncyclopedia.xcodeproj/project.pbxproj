@@ -15,6 +15,10 @@
 		60D9F9312AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */; };
 		60D9F9332AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */; };
 		C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */; };
+		C7F7C0572B3E8AE9006C6B5F /* MockCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0562B3E8AE9006C6B5F /* MockCharacterModel.swift */; };
+		C7F7C0592B3E8AFD006C6B5F /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0582B3E8AFD006C6B5F /* Character.swift */; };
+		C7F7C05B2B3E8B33006C6B5F /* StructGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */; };
+		C7F7C05F2B3E9073006C6B5F /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C05E2B3E9073006C6B5F /* CharacterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITests.swift; sourceTree = "<group>"; };
 		60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		C7F7C0562B3E8AE9006C6B5F /* MockCharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterModel.swift; sourceTree = "<group>"; };
+		C7F7C0582B3E8AFD006C6B5F /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructGenerator.swift; sourceTree = "<group>"; };
+		C7F7C05E2B3E9073006C6B5F /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,8 @@
 		60D9F9142AE1F9C000B80E77 /* StarWarsEncyclopedia */ = {
 			isa = PBXGroup;
 			children = (
+				C7F7C05C2B3E905F006C6B5F /* Presentation */,
+				C7F7C0552B3E8AC0006C6B5F /* Mocks */,
 				C7F7C0522B3E8876006C6B5F /* Models */,
 				60D9F9152AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift */,
 				60D9F9172AE1F9C000B80E77 /* ContentView.swift */,
@@ -134,8 +144,34 @@
 			isa = PBXGroup;
 			children = (
 				C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */,
+				C7F7C0582B3E8AFD006C6B5F /* Character.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C7F7C0552B3E8AC0006C6B5F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C7F7C0562B3E8AE9006C6B5F /* MockCharacterModel.swift */,
+				C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C7F7C05C2B3E905F006C6B5F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C7F7C05D2B3E9066006C6B5F /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C7F7C05D2B3E9066006C6B5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7F7C05E2B3E9073006C6B5F /* CharacterView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,9 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F7C05B2B3E8B33006C6B5F /* StructGenerator.swift in Sources */,
 				C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */,
 				60D9F9182AE1F9C000B80E77 /* ContentView.swift in Sources */,
+				C7F7C0592B3E8AFD006C6B5F /* Character.swift in Sources */,
 				60D9F9162AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift in Sources */,
+				C7F7C0572B3E8AE9006C6B5F /* MockCharacterModel.swift in Sources */,
+				C7F7C05F2B3E9073006C6B5F /* CharacterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
