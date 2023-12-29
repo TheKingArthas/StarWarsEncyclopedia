@@ -19,6 +19,7 @@
 		C7F7C0592B3E8AFD006C6B5F /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0582B3E8AFD006C6B5F /* Character.swift */; };
 		C7F7C05B2B3E8B33006C6B5F /* StructGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */; };
 		C7F7C05F2B3E9073006C6B5F /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C05E2B3E9073006C6B5F /* CharacterView.swift */; };
+		C7F7C0632B3EA2D5006C6B5F /* Starjedi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7F7C0622B3EA2D5006C6B5F /* Starjedi.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		C7F7C0582B3E8AFD006C6B5F /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructGenerator.swift; sourceTree = "<group>"; };
 		C7F7C05E2B3E9073006C6B5F /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		C7F7C0622B3EA2D5006C6B5F /* Starjedi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Starjedi.ttf; sourceTree = "<group>"; };
+		C7F7C0642B3EA340006C6B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 		60D9F9142AE1F9C000B80E77 /* StarWarsEncyclopedia */ = {
 			isa = PBXGroup;
 			children = (
+				C7F7C0642B3EA340006C6B5F /* Info.plist */,
 				60D9F9172AE1F9C000B80E77 /* ContentView.swift */,
 				C7F7C0552B3E8AC0006C6B5F /* Mocks */,
 				C7F7C0522B3E8876006C6B5F /* Models */,
@@ -177,9 +181,18 @@
 		C7F7C0602B3E9632006C6B5F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C7F7C0612B3EA27D006C6B5F /* Fonts */,
 				60D9F9192AE1F9C300B80E77 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C7F7C0612B3EA27D006C6B5F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C7F7C0622B3EA2D5006C6B5F /* Starjedi.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60D9F91D2AE1F9C300B80E77 /* Preview Assets.xcassets in Resources */,
+				C7F7C0632B3EA2D5006C6B5F /* Starjedi.ttf in Resources */,
 				60D9F91A2AE1F9C300B80E77 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +499,7 @@
 				DEVELOPMENT_TEAM = YM9992AM47;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StarWarsEncyclopedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -514,6 +529,7 @@
 				DEVELOPMENT_TEAM = YM9992AM47;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StarWarsEncyclopedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -39,11 +39,12 @@ struct CharacterView: View {
     private func characterInfoView() -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("\(character.name)")
-                .font(.system(size: 32))
+                .font(.custom("Starjedi", size: 32))
                 .foregroundStyle(.white)
             if character.gender != .other {
                 HStack {
                     Text("Gender: ")
+                        .font(.custom("Starjedi", size: 16))
                         .foregroundStyle(.white)
                     genderImageView(character.gender)
                 }
