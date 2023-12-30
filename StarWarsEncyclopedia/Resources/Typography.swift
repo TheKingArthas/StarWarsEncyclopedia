@@ -5,7 +5,7 @@ class Typography {
     static var h1: Font {
         .custom("Starjedi", size: 32)
     }
-    static var h2: Font {
+    static var body: Font {
         .custom("Starjedi", size: 16)
     }
     
@@ -13,15 +13,15 @@ class Typography {
 }
 
 extension Text {
-    func h1Style(color: Color = .white) -> some View {
+    func h1Style(color: Color = .starWarsYellow) -> some View {
         self
             .font(Typography.h1)
             .foregroundStyle(color)
     }
     
-    func h2Style(color: Color = .white) -> some View {
+    func bodyStyle(color: Color = .white) -> some View {
         self
-            .font(Typography.h2)
+            .font(Typography.body)
             .foregroundStyle(color)
     }
 }

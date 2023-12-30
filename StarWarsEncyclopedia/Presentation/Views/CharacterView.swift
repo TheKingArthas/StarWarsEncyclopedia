@@ -31,7 +31,7 @@ struct CharacterView: View {
                 .opacity(0.9)
             LinearGradient(gradient: Gradient(colors: [Color.clear,
                                                        Color.black,
-                                                       Color.gray]),
+                                                       CustomColor.darkGray]),
                            startPoint: .top,
                            endPoint: .bottom)
         }
@@ -40,26 +40,26 @@ struct CharacterView: View {
     private func characterInfoView() -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("\(character.name)")
-                .h1Style(color: .yellow)
+                .h1Style()
             if character.gender != .other {
                 HStack {
                     Text("Gender: ")
-                        .h2Style()
+                        .bodyStyle()
                     genderImageView(character.gender)
                 }
             }
             Text("Birth year: \(character.birthYear)")
-                .h2Style()
+                .bodyStyle()
             Text("Height: \(character.height)")
-                .h2Style()
+                .bodyStyle()
             Text("Weight: \(character.weight)")
-                .h2Style()
+                .bodyStyle()
             Text("Hair color: \(character.hairColor)")
-                .h2Style()
+                .bodyStyle()
             Text("Skin color: \(character.skinColor)")
-                .h2Style()
+                .bodyStyle()
             Text("Eyes color: \(character.eyesColor)")
-                .h2Style()
+                .bodyStyle()
         }
     }
     
