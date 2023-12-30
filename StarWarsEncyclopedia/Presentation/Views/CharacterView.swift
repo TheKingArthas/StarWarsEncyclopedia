@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct CharacterView: View {
+    @State private var bouncing = false
     private var character: Character
     
     init(character: Character) {
@@ -69,6 +70,12 @@ struct CharacterView: View {
             .aspectRatio(contentMode: .fill)
             .frame(width: 256, height: 256)
             .clipShape(Circle())
+            .frame(maxHeight: 280, alignment: bouncing ? .bottom : .top)
+            .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true), 
+                       value: bouncing)
+            .onAppear {
+                self.bouncing.toggle()
+            }
     }
     
     @ViewBuilder
