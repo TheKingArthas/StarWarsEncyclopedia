@@ -39,28 +39,26 @@ struct CharacterView: View {
     private func characterInfoView() -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("\(character.name)")
-                .font(.custom("Starjedi", size: 32))
-                .foregroundStyle(.white)
+                .h1Style(color: .yellow)
             if character.gender != .other {
                 HStack {
                     Text("Gender: ")
-                        .font(.custom("Starjedi", size: 16))
-                        .foregroundStyle(.white)
+                        .h2Style()
                     genderImageView(character.gender)
                 }
             }
             Text("Birth year: \(character.birthYear)")
-                .foregroundStyle(.white)
+                .h2Style()
             Text("Height: \(character.height)")
-                .foregroundStyle(.white)
+                .h2Style()
             Text("Weight: \(character.weight)")
-                .foregroundStyle(.white)
+                .h2Style()
             Text("Hair color: \(character.hairColor)")
-                .foregroundStyle(.white)
+                .h2Style()
             Text("Skin color: \(character.skinColor)")
-                .foregroundStyle(.white)
+                .h2Style()
             Text("Eyes color: \(character.eyesColor)")
-                .foregroundStyle(.white)
+                .h2Style()
         }
     }
     
