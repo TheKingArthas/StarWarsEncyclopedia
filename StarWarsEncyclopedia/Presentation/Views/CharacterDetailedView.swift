@@ -10,6 +10,9 @@ struct CharacterDetailedView: View {
     
     var body: some View {
         mainView
+            .background {
+                SpaceBackgroundView()
+            }
     }
     
     private var mainView: some View {
@@ -22,21 +25,6 @@ struct CharacterDetailedView: View {
                 .padding(.bottom, 32)
         }
         .padding(.horizontal, 32)
-        .background {
-            backgroundView()
-        }
-    }
-    
-    private func backgroundView() -> some View {
-        ZStack {
-            CustomImaging.spaceBackground
-                .opacity(0.9)
-            LinearGradient(gradient: Gradient(colors: [Color.clear,
-                                                       Color.black,
-                                                       CustomColor.darkerGray]),
-                           startPoint: .top,
-                           endPoint: .bottom)
-        }
     }
     
     private func characterNameView() -> some View {

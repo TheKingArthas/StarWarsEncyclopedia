@@ -12,6 +12,9 @@ struct CharactersView: View {
         NavigationStack {
             mainView
                 .navigationTitle(navigationTitle)
+                .background {
+                    SpaceBackgroundView()
+                }
         }
     }
     
