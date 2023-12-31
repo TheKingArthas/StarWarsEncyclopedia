@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CharacterView: View {
+struct CharacterDetailedView: View {
     @State private var bouncing = false
     private var character: Character
     
@@ -31,7 +31,7 @@ struct CharacterView: View {
                 .opacity(0.9)
             LinearGradient(gradient: Gradient(colors: [Color.clear,
                                                        Color.black,
-                                                       CustomColor.darkGray]),
+                                                       CustomColor.darkerGray]),
                            startPoint: .top,
                            endPoint: .bottom)
         }
@@ -84,13 +84,13 @@ struct CharacterView: View {
         
         switch gender {
         case .male:
-            Image("gender_male")
+            CustomImaging.genderMale
                 .resizable()
                 .renderingMode(.template)
                 .foregroundStyle(.white)
                 .frame(width: frameSize, height: frameSize)
         case .female:
-            Image("gender_female")
+            CustomImaging.genderFemale
                 .resizable()
                 .renderingMode(.template)
                 .foregroundStyle(.white)
@@ -104,5 +104,5 @@ struct CharacterView: View {
 #Preview {
     let model = MockCharacterModelGenerator().generate()
     let character = Character(model: model)
-    return CharacterView(character: character)
+    return CharacterDetailedView(character: character)
 }

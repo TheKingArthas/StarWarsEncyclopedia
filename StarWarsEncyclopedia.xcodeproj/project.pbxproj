@@ -8,19 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		60D9F9162AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9152AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift */; };
-		60D9F9182AE1F9C000B80E77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9172AE1F9C000B80E77 /* ContentView.swift */; };
 		60D9F91A2AE1F9C300B80E77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D9F9192AE1F9C300B80E77 /* Assets.xcassets */; };
 		60D9F91D2AE1F9C300B80E77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D9F91C2AE1F9C300B80E77 /* Preview Assets.xcassets */; };
 		60D9F9272AE1F9C400B80E77 /* StarWarsEncyclopediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9262AE1F9C400B80E77 /* StarWarsEncyclopediaTests.swift */; };
 		60D9F9312AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */; };
 		60D9F9332AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */; };
-		C7B910752B3FF73E00CCEAB4 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B910742B3FF73E00CCEAB4 /* Typography.swift */; };
+		C783A1612B40DC6600039328 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1602B40DC6600039328 /* CharactersView.swift */; };
+		C783A1632B4150E000039328 /* CharacterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1622B4150E000039328 /* CharacterCellView.swift */; };
+		C783A1652B41516800039328 /* MockCharacterGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1642B41516800039328 /* MockCharacterGenerator.swift */; };
+		C783A1672B4154B900039328 /* CustomImaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1662B4154B900039328 /* CustomImaging.swift */; };
+		C7B910752B3FF73E00CCEAB4 /* CustomTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B910742B3FF73E00CCEAB4 /* CustomTypography.swift */; };
 		C7B910772B3FFCCA00CCEAB4 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B910762B3FFCCA00CCEAB4 /* CustomColor.swift */; };
 		C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */; };
 		C7F7C0572B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0562B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift */; };
 		C7F7C0592B3E8AFD006C6B5F /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0582B3E8AFD006C6B5F /* Character.swift */; };
 		C7F7C05B2B3E8B33006C6B5F /* StructGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */; };
-		C7F7C05F2B3E9073006C6B5F /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C05E2B3E9073006C6B5F /* CharacterView.swift */; };
+		C7F7C05F2B3E9073006C6B5F /* CharacterDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C05E2B3E9073006C6B5F /* CharacterDetailedView.swift */; };
 		C7F7C0632B3EA2D5006C6B5F /* Starjedi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7F7C0622B3EA2D5006C6B5F /* Starjedi.ttf */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +47,6 @@
 /* Begin PBXFileReference section */
 		60D9F9122AE1F9C000B80E77 /* StarWarsEncyclopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsEncyclopedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D9F9152AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaApp.swift; sourceTree = "<group>"; };
-		60D9F9172AE1F9C000B80E77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		60D9F9192AE1F9C300B80E77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60D9F91C2AE1F9C300B80E77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		60D9F9222AE1F9C400B80E77 /* StarWarsEncyclopediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsEncyclopediaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,15 +54,19 @@
 		60D9F92C2AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsEncyclopediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITests.swift; sourceTree = "<group>"; };
 		60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		C7B910742B3FF73E00CCEAB4 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		C783A1602B40DC6600039328 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
+		C783A1622B4150E000039328 /* CharacterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellView.swift; sourceTree = "<group>"; };
+		C783A1642B41516800039328 /* MockCharacterGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterGenerator.swift; sourceTree = "<group>"; };
+		C783A1662B4154B900039328 /* CustomImaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImaging.swift; sourceTree = "<group>"; };
+		C7B910742B3FF73E00CCEAB4 /* CustomTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypography.swift; sourceTree = "<group>"; };
 		C7B910762B3FFCCA00CCEAB4 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		C7F7C0562B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterModelGenerator.swift; sourceTree = "<group>"; };
 		C7F7C0582B3E8AFD006C6B5F /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructGenerator.swift; sourceTree = "<group>"; };
-		C7F7C05E2B3E9073006C6B5F /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		C7F7C05E2B3E9073006C6B5F /* CharacterDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailedView.swift; sourceTree = "<group>"; };
 		C7F7C0622B3EA2D5006C6B5F /* Starjedi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Starjedi.ttf; sourceTree = "<group>"; };
-		C7F7C0642B3EA340006C6B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C7F7C0642B3EA340006C6B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,13 +117,12 @@
 		60D9F9142AE1F9C000B80E77 /* StarWarsEncyclopedia */ = {
 			isa = PBXGroup;
 			children = (
-				C7F7C0642B3EA340006C6B5F /* Info.plist */,
-				60D9F9172AE1F9C000B80E77 /* ContentView.swift */,
 				C7F7C0552B3E8AC0006C6B5F /* Mocks */,
 				C7F7C0522B3E8876006C6B5F /* Models */,
 				C7F7C05C2B3E905F006C6B5F /* Presentation */,
 				60D9F91B2AE1F9C300B80E77 /* Preview Content */,
 				C7F7C0602B3E9632006C6B5F /* Resources */,
+				C783A1682B4156D700039328 /* Settings */,
 				60D9F9152AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift */,
 			);
 			path = StarWarsEncyclopedia;
@@ -148,6 +153,14 @@
 			path = StarWarsEncyclopediaUITests;
 			sourceTree = "<group>";
 		};
+		C783A1682B4156D700039328 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C7F7C0642B3EA340006C6B5F /* Info.plist */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		C7F7C0522B3E8876006C6B5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +173,7 @@
 		C7F7C0552B3E8AC0006C6B5F /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				C783A1642B41516800039328 /* MockCharacterGenerator.swift */,
 				C7F7C0562B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift */,
 				C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */,
 			);
@@ -177,7 +191,9 @@
 		C7F7C05D2B3E9066006C6B5F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C7F7C05E2B3E9073006C6B5F /* CharacterView.swift */,
+				C783A1622B4150E000039328 /* CharacterCellView.swift */,
+				C7F7C05E2B3E9073006C6B5F /* CharacterDetailedView.swift */,
+				C783A1602B40DC6600039328 /* CharactersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,10 +201,11 @@
 		C7F7C0602B3E9632006C6B5F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C7F7C0612B3EA27D006C6B5F /* Fonts */,
 				60D9F9192AE1F9C300B80E77 /* Assets.xcassets */,
-				C7B910742B3FF73E00CCEAB4 /* Typography.swift */,
 				C7B910762B3FFCCA00CCEAB4 /* CustomColor.swift */,
+				C783A1662B4154B900039328 /* CustomImaging.swift */,
+				C7B910742B3FF73E00CCEAB4 /* CustomTypography.swift */,
+				C7F7C0612B3EA27D006C6B5F /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -334,12 +351,15 @@
 			files = (
 				C7F7C05B2B3E8B33006C6B5F /* StructGenerator.swift in Sources */,
 				C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */,
-				C7B910752B3FF73E00CCEAB4 /* Typography.swift in Sources */,
-				60D9F9182AE1F9C000B80E77 /* ContentView.swift in Sources */,
+				C7B910752B3FF73E00CCEAB4 /* CustomTypography.swift in Sources */,
 				C7F7C0592B3E8AFD006C6B5F /* Character.swift in Sources */,
+				C783A1652B41516800039328 /* MockCharacterGenerator.swift in Sources */,
+				C783A1632B4150E000039328 /* CharacterCellView.swift in Sources */,
 				60D9F9162AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift in Sources */,
+				C783A1612B40DC6600039328 /* CharactersView.swift in Sources */,
 				C7F7C0572B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift in Sources */,
-				C7F7C05F2B3E9073006C6B5F /* CharacterView.swift in Sources */,
+				C783A1672B4154B900039328 /* CustomImaging.swift in Sources */,
+				C7F7C05F2B3E9073006C6B5F /* CharacterDetailedView.swift in Sources */,
 				C7B910772B3FFCCA00CCEAB4 /* CustomColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,7 +527,7 @@
 				DEVELOPMENT_TEAM = YM9992AM47;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StarWarsEncyclopedia/Info.plist;
+				INFOPLIST_FILE = StarWarsEncyclopedia/Settings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -537,7 +557,7 @@
 				DEVELOPMENT_TEAM = YM9992AM47;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StarWarsEncyclopedia/Info.plist;
+				INFOPLIST_FILE = StarWarsEncyclopedia/Settings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

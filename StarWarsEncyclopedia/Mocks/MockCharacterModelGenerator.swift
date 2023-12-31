@@ -20,4 +20,42 @@ class MockCharacterModelGenerator: StructGenerator {
                        species: "human",
                        avatarImagePath: "https://www.fakePath.com/luke_skywalker")
     }
+    
+    func generateTroopers() -> [CharacterModel] {
+        [
+            CharacterModel(name: "Trooper soldier #1",
+                           height: 160,
+                           weight: 70,
+                           hairColor: "blond",
+                           skinColor: "fair",
+                           eyesColor: "blue",
+                           birthYear: "19BBY",
+                           gender: "male",
+                           homeWorld: "Imperial Department of Military Research",
+                           species: "human",
+                           avatarImagePath: "https://www.fakePath.com/luke_skywalker"),
+            CharacterModel(name: "Trooper soldier #2",
+                           height: 173,
+                           weight: 73,
+                           hairColor: "redhead",
+                           skinColor: "fair",
+                           eyesColor: "brown",
+                           birthYear: "19BBY",
+                           gender: "female",
+                           homeWorld: "Imperial Department of Military Research",
+                           species: "human",
+                           avatarImagePath: "https://www.fakePath.com/luke_skywalker"),
+            CharacterModel(name: "Trooper soldier #3",
+                           height: 182,
+                           weight: 91,
+                           hairColor: "brunette",
+                           skinColor: "fair",
+                           eyesColor: "green",
+                           birthYear: "19BBY",
+                           gender: "male",
+                           homeWorld: "Imperial Department of Military Research",
+                           species: "human",
+                           avatarImagePath: "https://www.fakePath.com/luke_skywalker")
+        ]
+    }
 }

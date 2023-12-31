@@ -1,9 +1,12 @@
 import Foundation
 import SwiftUI
 
-class CustomColor {
-    static var darkGray: Color {
-        Color("DarkGray")
+struct CustomColor {
+    static var darkerGray: Color {
+        Color("DarkerGray")
+    }
+    static var starWarsYellow: Color {
+        Color("StarWarsYellow")
     }
     
     private init() {}
