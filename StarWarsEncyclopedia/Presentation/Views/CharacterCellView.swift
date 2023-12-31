@@ -1,14 +1,19 @@
 import SwiftUI
 
 struct CharacterCellView: View {
+    @State private var avatarRotationDegrees: Double
     private var character: Character
     
     init(character: Character) {
+        avatarRotationDegrees = 0.0
         self.character = character
     }
     
     var body: some View {
         mainView
+            .onAppear {
+                startAvatarRotation()
+            }
     }
     
     private var mainView: some View {
@@ -32,6 +37,7 @@ struct CharacterCellView: View {
             .scaledToFit()
             .frame(width: 40, height: 40)
             .clipShape(Circle())
+            .rotation3DEffect(.degrees(avatarRotationDegrees), axis: (x: 0, y: 1, z: 0))
     }
     
     private func characterNameView() -> some View {
@@ -46,6 +52,12 @@ struct CharacterCellView: View {
         } label: {
             CustomImaging.moreButton
                 .foregroundStyle(.white)
+        }
+    }
+    
+    func startAvatarRotation() {
+        withAnimation(Animation.linear(duration: 10.0).repeatForever(autoreverses: false)) {
+            avatarRotationDegrees = 360.0
         }
     }
 }
