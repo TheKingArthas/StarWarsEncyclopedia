@@ -21,6 +21,7 @@ struct CharacterCellView: View {
             CustomColor.darkerGray
             HStack {
                 characterAvatarView()
+                    .padding(.vertical, 8)
                 Spacer()
                 characterNameView()
                 Spacer()
@@ -56,8 +57,8 @@ struct CharacterCellView: View {
     }
     
     func startAvatarRotation() {
-        withAnimation(Animation.linear(duration: 10.0).repeatForever(autoreverses: false)) {
-            avatarRotationDegrees = 360.0
+        withAnimation(Animation.linear(duration: 10).repeatForever(autoreverses: false)) {
+            avatarRotationDegrees = 360
         }
     }
 }
