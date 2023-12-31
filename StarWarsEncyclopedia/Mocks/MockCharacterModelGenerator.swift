@@ -45,7 +45,7 @@ class MockCharacterModelGenerator: StructGenerator {
                            homeWorld: "Imperial Department of Military Research",
                            species: "human",
                            avatarImagePath: "https://www.fakePath.com/luke_skywalker"),
-            CharacterModel(name: "Trooper soldier #3",
+            CharacterModel(name: "That one trooper with the long name",
                            height: 182,
                            weight: 91,
                            hairColor: "brunette",

@@ -15,11 +15,20 @@ struct CharactersView: View {
         }
     }
     
+    @ViewBuilder
     private var mainView: some View {
-        List(characters, id: \.name) { character in
-            CharacterCellView(character: character)
+        ScrollView {
+            LazyVStack(spacing: 16) {
+                ForEach(characters, id: \.name) { character in
+                    NavigationLink {
+                        CharacterDetailedView(character: character)
+                    } label: {
+                        CharacterCellView(character: character)
+                    }
+                }
+            }
+            .padding(.horizontal, 24)
         }
-        .listStyle(.plain)
     }
 }
 

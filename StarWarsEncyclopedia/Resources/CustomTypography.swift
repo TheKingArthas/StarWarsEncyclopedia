@@ -21,8 +21,10 @@ fileprivate struct CustomFont {
 extension Text {
     func h1Style(color: Color = CustomColor.starWarsYellow) -> some View {
         self
+            .lineLimit(1)
             .font(CustomTypography.h1)
             .foregroundStyle(color)
+            .minimumScaleFactor(0.7)
     }
     
     func bodyStyle(color: Color = .white) -> some View {

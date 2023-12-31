@@ -13,21 +13,23 @@ struct CharacterDetailedView: View {
     }
     
     private var mainView: some View {
-        ZStack {
+        VStack {
+            characterAvatarView()
+                .padding([.top, .bottom], 32)
+            characterNameView()
+                .padding(.bottom, 8)
+            characterInfoView()
+                .padding(.bottom, 32)
+        }
+        .padding(.horizontal, 32)
+        .background {
             backgroundView()
-                .ignoresSafeArea()
-            VStack {
-                characterAvatarView()
-                    .padding([.top, .bottom], 32)
-                characterInfoView()
-                    .padding(.bottom, 32)
-            }
         }
     }
     
     private func backgroundView() -> some View {
         ZStack {
-            Image("SpaceBackground")
+            CustomImaging.spaceBackground
                 .opacity(0.9)
             LinearGradient(gradient: Gradient(colors: [Color.clear,
                                                        Color.black,
@@ -37,10 +39,13 @@ struct CharacterDetailedView: View {
         }
     }
     
+    private func characterNameView() -> some View {
+        Text("\(character.name)")
+            .h1Style()
+    }
+    
     private func characterInfoView() -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("\(character.name)")
-                .h1Style()
             if character.gender != .other {
                 HStack {
                     Text("Gender: ")
@@ -71,7 +76,7 @@ struct CharacterDetailedView: View {
             .frame(width: 256, height: 256)
             .clipShape(Circle())
             .frame(maxHeight: 280, alignment: bouncing ? .bottom : .top)
-            .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true), 
+            .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true),
                        value: bouncing)
             .onAppear {
                 self.bouncing.toggle()

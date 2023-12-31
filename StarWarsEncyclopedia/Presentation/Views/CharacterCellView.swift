@@ -45,6 +45,7 @@ struct CharacterCellView: View {
         Text(character.name)
             .bodyStyle()
             .lineLimit(1)
+            .minimumScaleFactor(0.8)
     }
     
     private func moreButtonView() -> some View {

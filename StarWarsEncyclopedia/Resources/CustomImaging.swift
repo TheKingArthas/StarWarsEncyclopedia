@@ -12,4 +12,7 @@ struct CustomImaging {
         Image(systemName: "chevron.forward.circle.fill")
             .renderingMode(.template)
     }
+    static var spaceBackground: Image {
+        Image("SpaceBackground")
+    }
 }
