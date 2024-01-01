@@ -25,7 +25,7 @@ struct CharacterCellView: View {
                 Spacer()
                 characterNameView()
                 Spacer()
-                moreButtonView()
+                moreIconView()
             }
             .padding(.horizontal, 16)
         }
@@ -48,13 +48,9 @@ struct CharacterCellView: View {
             .minimumScaleFactor(0.8)
     }
     
-    private func moreButtonView() -> some View {
-        Button {
-            
-        } label: {
-            CustomImaging.moreButton
-                .foregroundStyle(.white)
-        }
+    private func moreIconView() -> some View {
+        CustomImaging.moreButton
+            .foregroundStyle(.white)
     }
     
     func startAvatarRotation() {
