@@ -11,7 +11,7 @@ import SwiftUI
 struct StarWarsEncyclopediaApp: App {
     var body: some Scene {
         WindowGroup {
-            CharactersView(characters: MockCharacterGenerator().generateTroopers())
+            HomeView()
         }
     }
 }

@@ -5,6 +5,7 @@ struct CharactersView: View {
     private var characters: [Character]
     
     init(characters: [Character] = []) {
+        NavigationBarConfiguration.configureTitle()
         self.characters = characters
     }
     

@@ -12,7 +12,7 @@ struct CustomTypography {
     private init() {}
 }
 
-fileprivate struct CustomFont {
+struct CustomFont {
     static func startJedi(size: CGFloat) -> Font {
         .custom("Starjedi", size: size)
     }
