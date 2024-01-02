@@ -1,3 +1,10 @@
+//
+//  CharacterModel.swift
+//  StarWarsEncyclopedia
+//
+//  Created by Federico De Luca on 29/12/23.
+//
+
 import Foundation
 
 struct CharacterModel {

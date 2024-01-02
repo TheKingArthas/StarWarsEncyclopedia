@@ -1,3 +1,10 @@
+//
+//  CharacterCellView.swift
+//  StarWarsEncyclopedia
+//
+//  Created by Federico De Luca on 30/12/23.
+//
+
 import SwiftUI
 
 struct CharacterCellView: View {

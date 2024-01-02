@@ -1,3 +1,10 @@
+//
+//  SpaceBackgroundView.swift
+//  StarWarsEncyclopedia
+//
+//  Created by Federico De Luca on 31/12/23.
+//
+
 import SwiftUI
 
 struct SpaceBackgroundView: View {

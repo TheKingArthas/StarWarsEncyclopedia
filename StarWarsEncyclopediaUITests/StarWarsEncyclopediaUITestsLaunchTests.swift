@@ -2,7 +2,7 @@
 //  StarWarsEncyclopediaUITestsLaunchTests.swift
 //  StarWarsEncyclopediaUITests
 //
-//  Created by Personal on 19/10/23.
+//  Created by Federico De Luca on 19/10/23.
 //
 
 import XCTest

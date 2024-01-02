@@ -1,3 +1,10 @@
+//
+//  CharacterDetailedView.swift
+//  StarWarsEncyclopedia
+//
+//  Created by Federico De Luca on 29/12/23.
+//
+
 import SwiftUI
 
 struct CharacterDetailedView: View {
