@@ -35,7 +35,7 @@ struct CharacterDetailedView: View {
     }
     
     private func characterNameView() -> some View {
-        Text("\(character.name)")
+        Text(character.name)
             .h1Style()
     }
     

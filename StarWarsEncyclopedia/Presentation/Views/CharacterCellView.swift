@@ -1,5 +1,5 @@
 //
-//  CharacterCellView.swift
+//  CustomCellView.swift
 //  StarWarsEncyclopedia
 //
 //  Created by Federico De Luca on 30/12/23.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct CharacterCellView: View {
+struct CustomCellView: View {
     @State private var avatarRotationDegrees: Double
-    private var character: Character
+    private var title: String
     
-    init(character: Character) {
+    init(title: String) {
         avatarRotationDegrees = 0.0
-        self.character = character
+        self.title = title
     }
     
     var body: some View {
@@ -30,7 +30,7 @@ struct CharacterCellView: View {
                 characterAvatarView()
                     .padding(.vertical, 8)
                 Spacer()
-                characterNameView()
+                titleView()
                 Spacer()
                 moreIconView()
             }
@@ -48,8 +48,8 @@ struct CharacterCellView: View {
             .rotation3DEffect(.degrees(avatarRotationDegrees), axis: (x: 0, y: 1, z: 0))
     }
     
-    private func characterNameView() -> some View {
-        Text(character.name)
+    private func titleView() -> some View {
+        Text(title)
             .bodyStyle()
             .lineLimit(1)
             .minimumScaleFactor(0.8)
@@ -68,5 +68,5 @@ struct CharacterCellView: View {
 }
 
 #Preview {
-    CharacterCellView(character: MockCharacterGenerator().generate())
+    CustomCellView(title: MockCharacterGenerator().generate().name)
 }

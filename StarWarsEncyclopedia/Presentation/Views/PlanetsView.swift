@@ -1,19 +1,19 @@
 //
-//  CharactersView.swift
+//  PlanetsView.swift
 //  StarWarsEncyclopedia
 //
-//  Created by Federico De Luca on 31/12/23.
+//  Created by Federico De Luca on 2/1/24.
 //
 
 import SwiftUI
 
-struct CharactersView: View {
-    private static var navigationTitle = "Characters"
-    private var characters: [Character]
+struct PlanetsView: View {
+    private static var navigationTitle = "Planets"
+    private var planets: [Planet]
     
-    init(characters: [Character]) {
+    init(planets: [Planet]) {
         NavigationBarConfiguration.configureTitle()
-        self.characters = characters
+        self.planets = planets
     }
     
     var body: some View {
@@ -30,11 +30,11 @@ struct CharactersView: View {
     private var mainView: some View {
         ScrollView {
             LazyVStack(spacing: 16) {
-                ForEach(characters, id: \.name) { character in
+                ForEach(planets, id: \.name) { planet in
                     NavigationLink {
-                        CharacterDetailedView(character: character)
+                        PlanetDetailedView(planet: planet)
                     } label: {
-                        CustomCellView(title: character.name)
+                        CustomCellView(title: planet.name)
                     }
                 }
             }
@@ -44,5 +44,5 @@ struct CharactersView: View {
 }
 
 #Preview {
-    CharactersView(characters: MockCharacterGenerator().generateTroopers())
+    PlanetsView(planets: MockPlanetGenerator().generateGalaxy())
 }

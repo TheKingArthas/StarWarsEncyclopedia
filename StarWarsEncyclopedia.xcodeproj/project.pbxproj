@@ -20,6 +20,12 @@
 		C783A16A2B42257500039328 /* SpaceBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1692B42257500039328 /* SpaceBackgroundView.swift */; };
 		C783A16C2B428D8000039328 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A16B2B428D8000039328 /* HomeView.swift */; };
 		C783A1712B4294FD00039328 /* NavigationBarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1702B4294FD00039328 /* NavigationBarConfiguration.swift */; };
+		C783A1732B42998C00039328 /* PlanetDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1722B42998C00039328 /* PlanetDetailedView.swift */; };
+		C783A1752B43AADE00039328 /* PlanetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1742B43AADE00039328 /* PlanetModel.swift */; };
+		C783A1772B43AB6400039328 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1762B43AB6400039328 /* Planet.swift */; };
+		C783A1792B43ABB300039328 /* MockPlanetModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1782B43ABB300039328 /* MockPlanetModelGenerator.swift */; };
+		C783A17B2B43AD5900039328 /* MockPlanetGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A17A2B43AD5900039328 /* MockPlanetGenerator.swift */; };
+		C783A1832B43B81C00039328 /* PlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1822B43B81C00039328 /* PlanetsView.swift */; };
 		C7B910752B3FF73E00CCEAB4 /* CustomTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B910742B3FF73E00CCEAB4 /* CustomTypography.swift */; };
 		C7B910772B3FFCCA00CCEAB4 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B910762B3FFCCA00CCEAB4 /* CustomColor.swift */; };
 		C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */; };
@@ -64,6 +70,12 @@
 		C783A1692B42257500039328 /* SpaceBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceBackgroundView.swift; sourceTree = "<group>"; };
 		C783A16B2B428D8000039328 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C783A1702B4294FD00039328 /* NavigationBarConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarConfiguration.swift; sourceTree = "<group>"; };
+		C783A1722B42998C00039328 /* PlanetDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailedView.swift; sourceTree = "<group>"; };
+		C783A1742B43AADE00039328 /* PlanetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetModel.swift; sourceTree = "<group>"; };
+		C783A1762B43AB6400039328 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		C783A1782B43ABB300039328 /* MockPlanetModelGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlanetModelGenerator.swift; sourceTree = "<group>"; };
+		C783A17A2B43AD5900039328 /* MockPlanetGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlanetGenerator.swift; sourceTree = "<group>"; };
+		C783A1822B43B81C00039328 /* PlanetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsView.swift; sourceTree = "<group>"; };
 		C7B910742B3FF73E00CCEAB4 /* CustomTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypography.swift; sourceTree = "<group>"; };
 		C7B910762B3FFCCA00CCEAB4 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
@@ -180,6 +192,8 @@
 			children = (
 				C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */,
 				C7F7C0582B3E8AFD006C6B5F /* Character.swift */,
+				C783A1742B43AADE00039328 /* PlanetModel.swift */,
+				C783A1762B43AB6400039328 /* Planet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,7 +203,9 @@
 			children = (
 				C783A1642B41516800039328 /* MockCharacterGenerator.swift */,
 				C7F7C0562B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift */,
+				C783A1782B43ABB300039328 /* MockPlanetModelGenerator.swift */,
 				C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */,
+				C783A17A2B43AD5900039328 /* MockPlanetGenerator.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -210,6 +226,8 @@
 				C7F7C05E2B3E9073006C6B5F /* CharacterDetailedView.swift */,
 				C783A1602B40DC6600039328 /* CharactersView.swift */,
 				C783A16B2B428D8000039328 /* HomeView.swift */,
+				C783A1722B42998C00039328 /* PlanetDetailedView.swift */,
+				C783A1822B43B81C00039328 /* PlanetsView.swift */,
 				C783A1692B42257500039328 /* SpaceBackgroundView.swift */,
 			);
 			path = Views;
@@ -366,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C783A1832B43B81C00039328 /* PlanetsView.swift in Sources */,
 				C7F7C05B2B3E8B33006C6B5F /* StructGenerator.swift in Sources */,
 				C783A1712B4294FD00039328 /* NavigationBarConfiguration.swift in Sources */,
 				C783A16C2B428D8000039328 /* HomeView.swift in Sources */,
@@ -373,13 +392,18 @@
 				C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */,
 				C7B910752B3FF73E00CCEAB4 /* CustomTypography.swift in Sources */,
 				C7F7C0592B3E8AFD006C6B5F /* Character.swift in Sources */,
+				C783A1772B43AB6400039328 /* Planet.swift in Sources */,
 				C783A1652B41516800039328 /* MockCharacterGenerator.swift in Sources */,
+				C783A1752B43AADE00039328 /* PlanetModel.swift in Sources */,
 				C783A1632B4150E000039328 /* CharacterCellView.swift in Sources */,
 				60D9F9162AE1F9C000B80E77 /* StarWarsEncyclopediaApp.swift in Sources */,
 				C783A1612B40DC6600039328 /* CharactersView.swift in Sources */,
+				C783A17B2B43AD5900039328 /* MockPlanetGenerator.swift in Sources */,
+				C783A1792B43ABB300039328 /* MockPlanetModelGenerator.swift in Sources */,
 				C7F7C0572B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift in Sources */,
 				C783A1672B4154B900039328 /* CustomImaging.swift in Sources */,
 				C7F7C05F2B3E9073006C6B5F /* CharacterDetailedView.swift in Sources */,
+				C783A1732B42998C00039328 /* PlanetDetailedView.swift in Sources */,
 				C7B910772B3FFCCA00CCEAB4 /* CustomColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
