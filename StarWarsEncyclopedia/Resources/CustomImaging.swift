@@ -15,9 +15,8 @@ struct CustomImaging {
     static var genderMale: Image {
         Image("GenderMale")
     }
-    static var moreButton: Image {
-        Image(systemName: "chevron.forward.circle.fill")
-            .renderingMode(.template)
+    static var planets: Image {
+        Image("Planets")
     }
     static var spaceBackground: Image {
         Image("SpaceBackground")
