@@ -9,10 +9,16 @@ import SwiftUI
 
 struct CharactersView: View {
     private static var navigationTitle = "Characters"
+    @State private var searchTerm: String
     private var characters: [Character]
+    private var filteredCharacters: [Character] {
+        guard !searchTerm.isEmpty else { return characters }
+        return characters.filter { $0.name.localizedStandardContains(searchTerm) }
+    }
     
     init(characters: [Character]) {
         NavigationBarConfiguration.configureTitle()
+        self.searchTerm = ""
         self.characters = characters
     }
     
@@ -28,18 +34,21 @@ struct CharactersView: View {
     
     @ViewBuilder
     private var mainView: some View {
-        ScrollView {
-            LazyVStack(spacing: 16) {
-                ForEach(characters, id: \.name) { character in
-                    NavigationLink {
-                        CharacterDetailedView(character: character)
-                    } label: {
-                        CustomCellView(title: character.name)
-                    }
-                }
+        List(filteredCharacters, id: \.name) { character in
+            NavigationLink {
+                CharacterDetailedView(character: character)
+            } label: {
+                CustomCellView(title: character.name)
             }
-            .padding(.horizontal, 24)
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+            .listRowInsets(EdgeInsets())
         }
+        .scrollContentBackground(.hidden)
+        .listRowSpacing(8)
+        .searchable(text: $searchTerm, prompt: "Search Character")
+        .font(CustomTypography.body)
+        .foregroundColor(.white)
     }
 }
 

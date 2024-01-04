@@ -32,7 +32,6 @@ struct CustomCellView: View {
                 Spacer()
                 titleView()
                 Spacer()
-                moreIconView()
             }
             .padding(.horizontal, 16)
         }
@@ -53,11 +52,6 @@ struct CustomCellView: View {
             .bodyStyle()
             .lineLimit(1)
             .minimumScaleFactor(0.8)
-    }
-    
-    private func moreIconView() -> some View {
-        CustomImaging.moreButton
-            .foregroundStyle(.white)
     }
     
     func startAvatarRotation() {
