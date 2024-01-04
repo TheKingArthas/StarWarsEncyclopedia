@@ -9,10 +9,16 @@ import SwiftUI
 
 struct PlanetsView: View {
     private static var navigationTitle = "Planets"
+    @State private var searchTerm: String
     private var planets: [Planet]
+    private var filteredPlanets: [Planet] {
+        guard !searchTerm.isEmpty else { return planets }
+        return planets.filter { $0.name.localizedStandardContains(searchTerm) }
+    }
     
     init(planets: [Planet]) {
         NavigationBarConfiguration.configureTitle()
+        self.searchTerm = ""
         self.planets = planets
     }
     
@@ -28,18 +34,21 @@ struct PlanetsView: View {
     
     @ViewBuilder
     private var mainView: some View {
-        ScrollView {
-            LazyVStack(spacing: 16) {
-                ForEach(planets, id: \.name) { planet in
-                    NavigationLink {
-                        PlanetDetailedView(planet: planet)
-                    } label: {
-                        CustomCellView(title: planet.name)
-                    }
-                }
+        List(filteredPlanets, id: \.name) { planet in
+            NavigationLink {
+                PlanetDetailedView(planet: planet)
+            } label: {
+                CustomCellView(title: planet.name)
             }
-            .padding(.horizontal, 24)
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+            .listRowInsets(EdgeInsets())
         }
+        .scrollContentBackground(.hidden)
+        .listRowSpacing(8)
+        .searchable(text: $searchTerm, prompt: "Search Planet")
+        .font(CustomTypography.body)
+        .foregroundColor(.white)
     }
 }
 
