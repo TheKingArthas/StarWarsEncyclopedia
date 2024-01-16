@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CharacterAPI {
-    func getCharacter() async throws -> CharacterModel {
+struct CharacterApi {
+    func getCharacters() async throws -> [CharacterModel] {
         guard let endpointUrl = Endpoint.characters else {
             throw ApiError.invalidUrl
         }
@@ -22,7 +22,7 @@ struct CharacterAPI {
         do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return try decoder.decode(CharacterModel.self, from: data)
+            return try decoder.decode(CharactersModels.self, from: data).results
         } catch {
             throw ApiError.invalidData
         }

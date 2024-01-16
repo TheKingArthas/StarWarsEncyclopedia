@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var characters: [Character]?
+    
     init() {
         NavigationBarConfiguration.configureTitle()
     }
@@ -26,7 +28,7 @@ struct HomeView: View {
                     titleView()
                         .padding(.top, 32)
                     NavigationLink {
-                        CharactersView(characters: MockCharacterGenerator().generateTroopers())
+                        CharactersView(characters: characters ?? [])
                     } label: {
                         tileView(title: "Characters", background: CustomImaging.planets)
                     }

@@ -101,8 +101,8 @@ struct CharacterDetailedView: View {
     }
 }
 
-#Preview {
-    let model = MockCharacterModelGenerator().generate()
-    let character = Character(model: model)
-    return CharacterDetailedView(character: character)
-}
+//#Preview {
+//    let model = MockCharacterModelGenerator().generate()
+//    let character = Character(model: model)
+//    return CharacterDetailedView(character: character)
+//}

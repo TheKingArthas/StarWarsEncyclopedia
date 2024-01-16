@@ -61,6 +61,6 @@ struct CustomCellView: View {
     }
 }
 
-#Preview {
-    CustomCellView(title: MockCharacterGenerator().generate().name)
-}
+//#Preview {
+//    CustomCellView(title: MockCharacterGenerator().generate().name)
+//}

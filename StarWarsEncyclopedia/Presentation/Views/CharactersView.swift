@@ -10,7 +10,7 @@ import SwiftUI
 struct CharactersView: View {
     private static var navigationTitle = "Characters"
     @State private var searchTerm: String
-    private var characters: [Character]
+    @State private var characters: [Character]
     private var filteredCharacters: [Character] {
         guard !searchTerm.isEmpty else { return characters }
         return characters.filter { $0.name.localizedStandardContains(searchTerm) }
@@ -19,7 +19,7 @@ struct CharactersView: View {
     init(characters: [Character]) {
         NavigationBarConfiguration.configureTitle()
         self.searchTerm = ""
-        self.characters = characters
+        self.characters = []
     }
     
     var body: some View {
@@ -29,6 +29,24 @@ struct CharactersView: View {
                 .background {
                     SpaceBackgroundView()
                 }
+        }
+        .task {
+            do {
+//                let charactersModels = try await CharacterApi().getCharacters()
+//                charactersModels.characters.forEach { model in
+//                    characters.append(Character(model: model))
+//                }
+                let characters = try await CharacterApi().getCharacters()
+                print(characters[0].name)
+            } catch ApiError.invalidUrl {
+                print("Invalid URL")
+            } catch ApiError.invalidResponse {
+                print("Invalid response")
+            } catch ApiError.invalidData {
+                print("Invalid data")
+            } catch {
+                print("Unexpected error")
+            }
         }
     }
     
@@ -52,6 +70,6 @@ struct CharactersView: View {
     }
 }
 
-#Preview {
-    CharactersView(characters: MockCharacterGenerator().generateTroopers())
-}
+//#Preview {
+//    CharactersView(characters: MockCharacterGenerator().generateTroopers())
+//}

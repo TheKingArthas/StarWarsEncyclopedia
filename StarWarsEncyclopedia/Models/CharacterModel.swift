@@ -7,16 +7,19 @@
 
 import Foundation
 
+struct CharactersModels: Codable {
+    var results: [CharacterModel]
+}
+
 struct CharacterModel: Codable {
     var name: String
-    var height: Int
-    var mass: Int
-    var hairColor: String
-    var skinColor: String
-    var eyesColor: String
-    var birthYear: String
-    var gender: String
-    var homeworld: String
-    var species: [String]
-    var avatarImagePath: String
+//    var height: String
+//    var mass: String
+//    var hairColor: String
+//    var skinColor: String
+//    var eyeColor: String
+//    var birthYear: String
+//    var gender: String
+//    var homeworld: String
+//    var species: [String]
 }
