@@ -32,12 +32,10 @@ struct CharactersView: View {
         }
         .task {
             do {
-//                let charactersModels = try await CharacterApi().getCharacters()
-//                charactersModels.characters.forEach { model in
-//                    characters.append(Character(model: model))
-//                }
-                let characters = try await CharacterApi().getCharacters()
-                print(characters[0].name)
+                let charactersModels = try await CharacterApi().getCharacters()
+                characters = charactersModels.compactMap { model in
+                    Character(model: model)
+                }
             } catch ApiError.invalidUrl {
                 print("Invalid URL")
             } catch ApiError.invalidResponse {
