@@ -9,20 +9,20 @@ import SwiftUI
 
 struct CharactersView: View {
     private static var navigationTitle = "Characters"
+    @State private var viewModel: CharactersViewModel
     @State private var searchTerm: String
-    @State private var characters: [Character]
     @State private var error: Error?
     @State private var shouldShowAlert: Bool = false
     
     private var filteredCharacters: [Character] {
-        guard !searchTerm.isEmpty else { return characters }
-        return characters.filter { $0.name.localizedStandardContains(searchTerm) }
+        guard !searchTerm.isEmpty else { return viewModel.characters }
+        return viewModel.characters.filter { $0.name.localizedStandardContains(searchTerm) }
     }
     
-    init(characters: [Character]) {
+    init(viewModel: CharactersViewModel) {
         NavigationBarConfiguration.configureTitle()
         self.searchTerm = ""
-        self.characters = []
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -35,14 +35,12 @@ struct CharactersView: View {
         }
         .task {
             do {
-                let charactersModels = try await CharacterApi().getCharacters()
-                characters = charactersModels.compactMap { model in
-                    Character(model: model)
-                }
+                try await viewModel.getCharacters()
             } catch {
                 self.error = error
                 shouldShowAlert = true
             }
+
         }
         .alert(isPresented: $shouldShowAlert,
                content: {
