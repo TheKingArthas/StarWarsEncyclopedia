@@ -11,6 +11,9 @@ struct CharactersView: View {
     private static var navigationTitle = "Characters"
     @State private var searchTerm: String
     @State private var characters: [Character]
+    @State private var error: Error?
+    @State private var shouldShowAlert: Bool = false
+    
     private var filteredCharacters: [Character] {
         guard !searchTerm.isEmpty else { return characters }
         return characters.filter { $0.name.localizedStandardContains(searchTerm) }
@@ -36,16 +39,19 @@ struct CharactersView: View {
                 characters = charactersModels.compactMap { model in
                     Character(model: model)
                 }
-            } catch ApiError.invalidUrl {
-                print("Invalid URL")
-            } catch ApiError.invalidResponse {
-                print("Invalid response")
-            } catch ApiError.invalidData {
-                print("Invalid data")
             } catch {
-                print("Unexpected error")
+                self.error = error
+                shouldShowAlert = true
             }
         }
+        .alert(isPresented: $shouldShowAlert,
+               content: {
+            if let error = error {
+                CustomSystemAlert().alertFromError(error, shouldShowAlert: $shouldShowAlert)
+            } else {
+                Alert(title: Text(""))
+            }
+        })
     }
     
     @ViewBuilder

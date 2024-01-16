@@ -9,7 +9,7 @@ import Foundation
 
 struct Endpoint {
     static var characters: URL? {
-        URL(string: "https://swapi.dev/api/people")
+        endpointUrl(.people)
     }
     
     private static var serverUrl: String {
