@@ -19,12 +19,18 @@ struct CharacterImageUrlService {
             throw ApiError.invalidResponse
         }
         
+        if let dataString = String(data: data, encoding: .utf8) {
+            print("Received data:", dataString)
+        } else {
+            print("Failed to convert data to string")
+        }
+        
         do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let characterImageModels = try decoder.decode(CharacterImageModels.self, from: data).results
-            if let imageUrlString = characterImageModels.first?.imageUrl {
-                return URL(string: imageUrlString)
+            let charactersImagesModels = try decoder.decode([CharacterImageModel].self, from: data)
+            if let characterImageUrl = charactersImagesModels.first?.imageUrl {
+                return URL(string: characterImageUrl)
             } else {
                 throw ApiError.invalidData
             }

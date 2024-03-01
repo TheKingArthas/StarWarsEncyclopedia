@@ -9,16 +9,32 @@ import SwiftUI
 
 struct CharacterDetailedView: View {
     @State private var bouncing = false
+    @State private var characterImage: Image?
     private var character: Character
+    private var charactersViewModel: CharactersViewModel
     
-    init(character: Character) {
+    init(character: Character,
+         charactersViewModel: CharactersViewModel) {
         self.character = character
+        self.charactersViewModel = charactersViewModel
     }
     
     var body: some View {
         mainView
             .background {
                 SpaceBackgroundView()
+            }
+            .onAppear {
+                Task {
+                    do {
+                        if let imageUrl = await charactersViewModel.getCharacterImageUrl(character) {
+                            let imageData = try Data(contentsOf: imageUrl)
+                            characterImage = Image(uiImage: UIImage(data: imageData)!)
+                        }
+                    } catch {
+                        print("Error fetching character image: \(error)")
+                    }
+                }
             }
     }
     
@@ -64,18 +80,35 @@ struct CharacterDetailedView: View {
     }
     
     private func characterAvatarView() -> some View {
-        Image(systemName: "person.fill")
-            .resizable()
-            .background(Color.white)
-            .aspectRatio(contentMode: .fill)
-            .frame(width: 256, height: 256)
-            .clipShape(Circle())
-            .frame(maxHeight: 280, alignment: bouncing ? .bottom : .top)
-            .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true),
-                       value: bouncing)
-            .onAppear {
-                self.bouncing.toggle()
+        Group {
+            if let characterImage = characterImage {
+                characterImage
+                    .resizable()
+                    .background(Color.white)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 256, height: 256)
+                    .clipShape(Circle())
+                    .frame(maxHeight: 280, alignment: bouncing ? .bottom : .top)
+                    .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true),
+                               value: bouncing)
+                    .onAppear {
+                        self.bouncing.toggle()
+                    }
+            } else {
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .background(Color.white)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 256, height: 256)
+                    .clipShape(Circle())
+                    .frame(maxHeight: 280, alignment: bouncing ? .bottom : .top)
+                    .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true),
+                               value: bouncing)
+                    .onAppear {
+                        self.bouncing.toggle()
+                    }
             }
+        }
     }
     
     @ViewBuilder

@@ -14,7 +14,7 @@ struct Endpoint {
     
     static func characterImage(characterName: String) -> URL? {
         let encodedName = characterName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        return URL(string: "https://starwars-databank-server.vercel.app/api/v1/characters/\(encodedName)")
+        return URL(string: "https://starwars-databank-server.vercel.app/api/v1/characters/name/\(encodedName)")
     }
     
     private init() {}

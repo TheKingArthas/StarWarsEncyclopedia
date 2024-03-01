@@ -56,7 +56,8 @@ struct CharactersView: View {
     private var mainView: some View {
         List(filteredCharacters, id: \.name) { character in
             NavigationLink {
-                CharacterDetailedView(character: character)
+                CharacterDetailedView(character: character,
+                                      charactersViewModel: viewModel)
             } label: {
                 CustomCellView(title: character.name)
             }

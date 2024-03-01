@@ -20,4 +20,13 @@ struct CharactersViewModel {
             throw error
         }
     }
+    
+    func getCharacterImageUrl(_ character: Character) async -> URL? {
+        do {
+            return try await CharacterImageUrlService().getCharacterImageUrl(name: character.name)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 }
