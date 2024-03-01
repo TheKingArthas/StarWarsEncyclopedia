@@ -14,14 +14,14 @@ enum Gender {
 }
 
 struct Character {
-    var name: String
-    var height: Int
-    var weight: Int
-    var hairColor: String
-    var skinColor: String
-    var eyesColor: String
-    var birthYear: String
-    var gender: Gender
+    let name: String
+    let height: Int
+    let weight: Int
+    let hairColor: String
+    let skinColor: String
+    let eyesColor: String
+    let birthYear: String
+    let gender: Gender
     
     private static func genderFromString(_ genderAsString: String) -> Gender {
         if genderAsString == "male" {

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct CharacterApi {
+struct CharacterService {
     func getCharacters() async throws -> [CharacterModel] {
-        guard let endpointUrl = Endpoint.characters else {
+        guard let endpointUrl = Endpoint.characters() else {
             throw ApiError.invalidUrl
         }
         

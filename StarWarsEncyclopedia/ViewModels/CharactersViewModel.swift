@@ -12,7 +12,7 @@ struct CharactersViewModel {
     
     mutating func getCharacters() async throws {
         do {
-            let charactersModels = try await CharacterApi().getCharacters()
+            let charactersModels = try await CharacterService().getCharacters()
             charactersModels.forEach { model in
                 characters.append(Character(model: model))
             }

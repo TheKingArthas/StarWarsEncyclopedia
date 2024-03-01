@@ -8,18 +8,18 @@
 import Foundation
 
 struct CharactersModels: Codable {
-    var results: [CharacterModel]
+    let results: [CharacterModel]
 }
 
 struct CharacterModel: Codable {
-    var name: String
-    var height: String
-    var mass: String
-    var hairColor: String
-    var skinColor: String
-    var eyeColor: String
-    var birthYear: String
-    var gender: String
-    var homeworld: String
-    var species: [String]
+    let name: String
+    let height: String
+    let mass: String
+    let hairColor: String
+    let skinColor: String
+    let eyeColor: String
+    let birthYear: String
+    let gender: String
+    let homeworld: String
+    let species: [String]
 }

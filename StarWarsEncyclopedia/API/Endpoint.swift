@@ -8,27 +8,20 @@
 import Foundation
 
 struct Endpoint {
-    static var characters: URL? {
-        endpointUrl(.people)
+    static func characters() -> URL? {
+        URL(string: "https://swapi.dev/api/people")
     }
     
-    private static var serverUrl: String {
-        "https://swapi.dev/api"
+    static func characterImage(characterName: String) -> URL? {
+        let encodedName = characterName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        return URL(string: "https://starwars-databank-server.vercel.app/api/v1/characters/\(encodedName)")
     }
     
     private init() {}
-    
-    static private func endpointUrl(_ endpointName: EndpointName) -> URL? {
-        URL(string: "\(serverUrl)/\(endpointName)")
-    }
 }
 
 enum ApiError: Error {
     case invalidData
     case invalidResponse
     case invalidUrl
-}
-
-fileprivate enum EndpointName: String {
-    case people = "people"
 }
