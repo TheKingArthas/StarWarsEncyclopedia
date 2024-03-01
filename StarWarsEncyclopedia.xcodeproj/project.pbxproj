@@ -27,12 +27,12 @@
 		C7D63A022B55E34400583C8D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D63A012B55E34400583C8D /* Endpoint.swift */; };
 		C7D63A042B561A9000583C8D /* CustomSystemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D63A032B561A9000583C8D /* CustomSystemAlert.swift */; };
 		C7D63A072B56298500583C8D /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D63A062B56298500583C8D /* CharactersViewModel.swift */; };
+		C7F7212C2B917DD000F71288 /* SoloistStraight.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7F7212B2B917DD000F71288 /* SoloistStraight.otf */; };
 		C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */; };
 		C7F7C0572B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0562B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift */; };
 		C7F7C0592B3E8AFD006C6B5F /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C0582B3E8AFD006C6B5F /* Character.swift */; };
 		C7F7C05B2B3E8B33006C6B5F /* StructGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */; };
 		C7F7C05F2B3E9073006C6B5F /* CharacterDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F7C05E2B3E9073006C6B5F /* CharacterDetailedView.swift */; };
-		C7F7C0632B3EA2D5006C6B5F /* Starjedi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7F7C0622B3EA2D5006C6B5F /* Starjedi.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,12 +76,12 @@
 		C7D63A012B55E34400583C8D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		C7D63A032B561A9000583C8D /* CustomSystemAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSystemAlert.swift; sourceTree = "<group>"; };
 		C7D63A062B56298500583C8D /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		C7F7212B2B917DD000F71288 /* SoloistStraight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoloistStraight.otf; sourceTree = "<group>"; };
 		C7F7C0532B3E888C006C6B5F /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		C7F7C0562B3E8AE9006C6B5F /* MockCharacterModelGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterModelGenerator.swift; sourceTree = "<group>"; };
 		C7F7C0582B3E8AFD006C6B5F /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		C7F7C05A2B3E8B33006C6B5F /* StructGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructGenerator.swift; sourceTree = "<group>"; };
 		C7F7C05E2B3E9073006C6B5F /* CharacterDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailedView.swift; sourceTree = "<group>"; };
-		C7F7C0622B3EA2D5006C6B5F /* Starjedi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Starjedi.ttf; sourceTree = "<group>"; };
 		C7F7C0642B3EA340006C6B5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -261,7 +261,7 @@
 		C7F7C0612B3EA27D006C6B5F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				C7F7C0622B3EA2D5006C6B5F /* Starjedi.ttf */,
+				C7F7212B2B917DD000F71288 /* SoloistStraight.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -371,7 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60D9F91D2AE1F9C300B80E77 /* Preview Assets.xcassets in Resources */,
-				C7F7C0632B3EA2D5006C6B5F /* Starjedi.ttf in Resources */,
+				C7F7212C2B917DD000F71288 /* SoloistStraight.otf in Resources */,
 				60D9F91A2AE1F9C300B80E77 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,7 +598,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -628,7 +628,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

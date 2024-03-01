@@ -10,28 +10,28 @@ import SwiftUI
 
 struct CustomTypography {
     static var title: Font {
-        CustomFont.startJedi(size: 80)
+        CustomFont.soloist(size: 80)
     }
     static var subtitle: Font {
-        CustomFont.startJedi(size: 24)
+        CustomFont.soloist(size: 24)
     }
     static var h1: Font {
-        CustomFont.startJedi(size: 32)
+        CustomFont.soloist(size: 32)
     }
     static var body: Font {
-        CustomFont.startJedi(size: 16)
+        CustomFont.soloist(size: 16)
     }
     
     static func custom(size: CGFloat) -> Font {
-        CustomFont.startJedi(size: size)
+        CustomFont.soloist(size: size)
     }
     
     private init() {}
 }
 
 struct CustomFont {
-    static func startJedi(size: CGFloat) -> Font {
-        .custom("Starjedi", size: size)
+    static func soloist(size: CGFloat) -> Font {
+        .custom("SoloistStraight", size: size)
     }
 }
 
