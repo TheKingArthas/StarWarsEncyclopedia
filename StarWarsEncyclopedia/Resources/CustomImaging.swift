@@ -15,9 +15,6 @@ struct CustomImaging {
     static var genderMale: Image {
         Image("GenderMale")
     }
-    static var planets: Image {
-        Image("Planets")
-    }
     static var spaceBackground: Image {
         Image("SpaceBackground")
     }

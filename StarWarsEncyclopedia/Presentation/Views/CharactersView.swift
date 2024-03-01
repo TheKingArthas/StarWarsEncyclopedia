@@ -71,7 +71,3 @@ struct CharactersView: View {
         .foregroundColor(.white)
     }
 }
-
-//#Preview {
-//    CharactersView(characters: MockCharacterGenerator().generateTroopers())
-//}
