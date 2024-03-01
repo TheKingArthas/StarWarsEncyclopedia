@@ -61,8 +61,8 @@ struct HomeView: View {
                     .shadow(color: Color.starWarsYellow,
                             radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 Text("START")
-                    .customStyle(color: Color.black,
-                                 size: 24)
+                    .customStyleWithSize(color: Color.black,
+                                         size: 24)
             }
         }
         

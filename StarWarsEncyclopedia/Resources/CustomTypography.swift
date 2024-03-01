@@ -36,51 +36,47 @@ struct CustomFont {
 }
 
 extension Text {
-    func titleStyle(color: Color = CustomColor.starWarsYellow,
-                    lineLimit: Int = 2) -> some View {
+    func titleStyle() -> some View {
         self
-            .multilineTextAlignment(.center)
-            .lineLimit(lineLimit)
-            .lineSpacing(0)
-            .font(CustomTypography.title)
-            .foregroundStyle(color)
-            .minimumScaleFactor(0.0)
+            .customStyle(color: CustomColor.starWarsYellow,
+                         font: CustomTypography.title,
+                         lineLimit: 2)
     }
     
-    func subtitleStyle(color: Color = CustomColor.starWarsYellow,
-                    lineLimit: Int = 2) -> some View {
+    func subtitleStyle() -> some View {
         self
-            .multilineTextAlignment(.center)
-            .lineLimit(lineLimit)
-            .font(CustomTypography.subtitle)
-            .foregroundStyle(color)
-            .minimumScaleFactor(0.0)
+            .customStyle(color: CustomColor.starWarsYellow,
+                         font: CustomTypography.subtitle,
+                         lineLimit: 2)
     }
     
-    func h1Style(color: Color = CustomColor.starWarsYellow,
-                 lineLimit: Int = 1) -> some View {
+    func h1Style() -> some View {
         self
-            .multilineTextAlignment(.center)
-            .lineLimit(lineLimit)
-            .font(CustomTypography.h1)
-            .foregroundStyle(color)
-            .minimumScaleFactor(0.7)
+            .customStyle(color: CustomColor.starWarsYellow,
+                         font: CustomTypography.h1)
     }
     
     func bodyStyle(color: Color = .white) -> some View {
         self
-            .font(CustomTypography.body)
-            .foregroundStyle(color)
+            .customStyle()
     }
     
-    func customStyle(color: Color = CustomColor.starWarsYellow,
-                     lineLimit: Int = 1,
-                     size: CGFloat = 32.0) -> some View {
+    func customStyleWithSize(color: Color = .white,
+                             size: CGFloat,
+                             lineLimit: Int = 1) -> some View {
+        customStyle(color: color,
+                    font: CustomTypography.custom(size: size),
+                    lineLimit: lineLimit)
+    }
+    
+    private func customStyle(color: Color = .white,
+                             font: Font = CustomTypography.body,
+                             lineLimit: Int = 1) -> some View {
         self
-            .multilineTextAlignment(.center)
-            .lineLimit(lineLimit)
-            .font(CustomTypography.custom(size: size))
             .foregroundStyle(color)
+            .font(font)
+            .lineLimit(lineLimit)
+            .multilineTextAlignment(.center)
             .minimumScaleFactor(0.7)
     }
 }
