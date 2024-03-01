@@ -11,7 +11,7 @@ struct CharacterDetailedView: View {
     @State private var bouncing = false
     @State private var characterImage: Image?
     private var character: Character
-    private var charactersViewModel: CharactersViewModel
+    private let charactersViewModel: CharactersViewModel
     
     init(character: Character,
          charactersViewModel: CharactersViewModel) {

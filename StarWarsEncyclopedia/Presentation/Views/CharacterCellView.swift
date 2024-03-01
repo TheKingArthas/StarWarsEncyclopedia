@@ -9,18 +9,33 @@ import SwiftUI
 
 struct CustomCellView: View {
     @State private var avatarRotationDegrees: Double
-    private var title: String
+    @State private var characterImage: Image?
+    private let character: Character
+    private let charactersViewModel: CharactersViewModel
     
-    init(title: String) {
+    init(character: Character,
+         charactersViewModel: CharactersViewModel) {
         avatarRotationDegrees = 0.0
-        self.title = title
+        self.character = character
+        self.charactersViewModel = charactersViewModel
     }
     
     var body: some View {
         mainView
             .onAppear {
                 startAvatarRotation()
+                Task {
+                    do {
+                        if let imageUrl = await charactersViewModel.getCharacterImageUrl(character) {
+                            let imageData = try Data(contentsOf: imageUrl)
+                            characterImage = Image(uiImage: UIImage(data: imageData)!)
+                        }
+                    } catch {
+                        print("Error fetching character image: \(error)")
+                    }
+                }
             }
+        
     }
     
     private var mainView: some View {
@@ -38,29 +53,27 @@ struct CustomCellView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
     
+    @ViewBuilder
     private func characterAvatarView() -> some View {
-        Image(.jarJarBinks)
+        var avatarImage = characterImage ?? Image(systemName: "person.fill")
+        avatarImage
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
             .frame(width: 40, height: 40)
             .clipShape(Circle())
             .rotation3DEffect(.degrees(avatarRotationDegrees), axis: (x: 0, y: 1, z: 0))
     }
     
     private func titleView() -> some View {
-        Text(title)
+        Text(character.name)
             .bodyStyle()
             .lineLimit(1)
             .minimumScaleFactor(0.8)
     }
     
-    func startAvatarRotation() {
+    private func startAvatarRotation() {
         withAnimation(Animation.linear(duration: 10).repeatForever(autoreverses: false)) {
             avatarRotationDegrees = 360
         }
     }
 }
-
-//#Preview {
-//    CustomCellView(title: MockCharacterGenerator().generate().name)
-//}

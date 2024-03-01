@@ -40,7 +40,7 @@ struct CharactersView: View {
                 self.error = error
                 shouldShowAlert = true
             }
-
+            
         }
         .alert(isPresented: $shouldShowAlert,
                content: {
@@ -59,7 +59,8 @@ struct CharactersView: View {
                 CharacterDetailedView(character: character,
                                       charactersViewModel: viewModel)
             } label: {
-                CustomCellView(title: character.name)
+                CustomCellView(character: character,
+                               charactersViewModel: viewModel)
             }
             .listRowSeparator(.hidden)
             .listRowBackground(Color.clear)
