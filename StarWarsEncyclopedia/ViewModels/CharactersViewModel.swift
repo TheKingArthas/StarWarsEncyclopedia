@@ -41,6 +41,10 @@ struct CharactersViewModel {
         }
     }
     
+    func isLastPage() -> Bool {
+        currentPage + 1 == paginatedCharacters.count
+    }
+    
     private func getCharactersFromPage(_ pageNumber: Int) -> [Character] {
         if 1 <= pageNumber && pageNumber < paginatedCharacters.count {
             paginatedCharacters[pageNumber]

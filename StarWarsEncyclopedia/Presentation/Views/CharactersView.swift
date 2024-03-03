@@ -91,7 +91,7 @@ struct CharactersView: View {
                 .bodyStyle()
                 .padding(.horizontal, 64)
             ChangePageButtonView(pointingDirection: .right,
-                                 isDisabled: false) {
+                                 isDisabled: viewModel.isLastPage()) {
                 viewModel.currentPage += 1
             }
                                  .padding(.trailing, 16)

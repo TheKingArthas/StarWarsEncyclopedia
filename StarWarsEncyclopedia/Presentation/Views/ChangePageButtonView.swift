@@ -23,9 +23,9 @@ struct ChangePageButtonView: View {
         } label: {
             Image(systemName: "arrowtriangle.\(pointingDirection).fill")
                 .foregroundColor(CustomColor.white)
-                .disabled(isDisabled)
                 .opacity(isDisabled ? 0.3 : 1.0)
         }
+        .disabled(isDisabled)
     }
 }
 
