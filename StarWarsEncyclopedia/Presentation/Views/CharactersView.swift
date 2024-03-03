@@ -54,10 +54,12 @@ struct CharactersView: View {
     
     @ViewBuilder
     private var mainView: some View {
-        characterList()
-            .frame(maxHeight: .infinity)
-        numberedPageControls()
-            .frame(maxHeight: 64)
+        VStack {
+            characterList()
+                .frame(maxHeight: .infinity)
+            numberedPageControls()
+                .frame(maxHeight: 64)
+        }
     }
     
     private func characterList() -> some View {
@@ -83,7 +85,7 @@ struct CharactersView: View {
     private func numberedPageControls() -> some View {
         HStack {
             ChangePageButtonView(pointingDirection: .left,
-                                 isDisabled: viewModel.currentPage == 1) {
+                                 isDisabled: viewModel.isFirstPage()) {
                 viewModel.currentPage -= 1
             }
                                  .padding(.leading, 16)

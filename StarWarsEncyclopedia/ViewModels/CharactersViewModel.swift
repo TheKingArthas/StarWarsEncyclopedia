@@ -41,6 +41,10 @@ struct CharactersViewModel {
         }
     }
     
+    func isFirstPage() -> Bool {
+        currentPage == 1
+    }
+    
     func isLastPage() -> Bool {
         currentPage + 1 == paginatedCharacters.count
     }
