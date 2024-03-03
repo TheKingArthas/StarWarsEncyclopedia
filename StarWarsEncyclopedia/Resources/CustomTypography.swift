@@ -9,18 +9,10 @@ import Foundation
 import SwiftUI
 
 struct CustomTypography {
-    static var title: Font {
-        CustomFont.soloist(size: 80)
-    }
-    static var subtitle: Font {
-        CustomFont.soloist(size: 24)
-    }
-    static var h1: Font {
-        CustomFont.soloist(size: 32)
-    }
-    static var body: Font {
-        CustomFont.soloist(size: 16)
-    }
+    static var title: Font { CustomFont.soloist(size: 80) }
+    static var subtitle: Font { CustomFont.soloist(size: 24) }
+    static var h1: Font { CustomFont.soloist(size: 32) }
+    static var body: Font { CustomFont.soloist(size: 16) }
     
     static func custom(size: CGFloat) -> Font {
         CustomFont.soloist(size: size)

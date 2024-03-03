@@ -28,14 +28,3 @@ struct ChangePageButtonView: View {
         .disabled(isDisabled)
     }
 }
-
-#Preview {
-    ChangePageButtonView(pointingDirection: .left,
-                         isDisabled: false,
-                         action: {
-        print("Button pressed")
-    })
-    .background {
-        Color.black
-    }
-}

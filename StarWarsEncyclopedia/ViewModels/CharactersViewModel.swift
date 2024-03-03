@@ -6,14 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct CharactersViewModel {
-    var currentPage: Int = 1
+class CharactersViewModel: ObservableObject {
+    @Published var charactersFetchingFinished: Bool = false
+    @Published var currentPage: Int = 1
     var allCharacters: [Character] { paginatedCharacters.flatMap{ $0 } }
     var charactersFromCurrentPage: [Character] { getCharactersFromPage(currentPage) }
-    private var paginatedCharacters: [[Character]] = [[]]
+    @Published private var paginatedCharacters: [[Character]] = [[]]
     
-    mutating func fetchCharacters() async throws {
+    func fetchCharacters() async throws {
+        charactersFetchingFinished = false
         var fetchedCurrentPage = 1
         var lastPageWasReached: Bool = false
         while !lastPageWasReached {
@@ -29,6 +32,7 @@ struct CharactersViewModel {
                 throw error
             }
         }
+        charactersFetchingFinished = true
     }
     
     
@@ -57,7 +61,7 @@ struct CharactersViewModel {
         }
     }
     
-    private mutating func fetchCharactersFromPage(_ pageNumber: Int) async throws -> [Character] {
+    private func fetchCharactersFromPage(_ pageNumber: Int) async throws -> [Character] {
         do {
             var characters: [Character] = []
             let charactersModels = try await CharacterService().fetchCharactersFromPage(pageNumber)

@@ -52,7 +52,6 @@ struct HomeView: View {
     private func startButtonView() -> some View {
         Button {
             showCharacters.toggle()
-            print(showCharacters)
         } label: {
             ZStack {
                 Circle()

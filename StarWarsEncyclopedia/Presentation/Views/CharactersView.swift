@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharactersView: View {
     private static var navigationTitle = "Characters"
-    @State private var viewModel: CharactersViewModel
+    @ObservedObject var viewModel: CharactersViewModel
     @State private var searchTerm: String
     @State private var error: Error?
     @State private var shouldShowAlert: Bool = false
@@ -26,43 +26,48 @@ struct CharactersView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            mainView
-                .navigationTitle(Self.navigationTitle)
-                .background {
-                    SpaceBackgroundView()
+        ZStack {
+            NavigationStack {
+                mainView
+                    .navigationTitle(Self.navigationTitle)
+                    .background {
+                        SpaceBackgroundView()
+                    }
+            }
+            .task {
+                do {
+                    try await viewModel.fetchCharacters()
+                } catch {
+                    self.error = error
+                    shouldShowAlert = true
                 }
-        }
-        .task {
-            do {
-                try await viewModel.fetchCharacters()
-            } catch {
-                self.error = error
-                shouldShowAlert = true
+                
             }
-            
-        }
-        .alert(isPresented: $shouldShowAlert,
-               content: {
-            if let error = error {
-                CustomSystemAlert().alertFromError(error, shouldShowAlert: $shouldShowAlert)
-            } else {
-                Alert(title: Text(""))
+            .alert(isPresented: $shouldShowAlert,
+                   content: {
+                if let error = error {
+                    CustomSystemAlert().alertFromError(error, shouldShowAlert: $shouldShowAlert)
+                } else {
+                    Alert(title: Text(""))
+                }
+            })
+            if !viewModel.charactersFetchingFinished {
+                LoadingView()
             }
-        })
+        }
     }
     
     @ViewBuilder
     private var mainView: some View {
         VStack {
-            characterList()
+            charactersListView()
                 .frame(maxHeight: .infinity)
-            numberedPageControls()
+            numberedPageControlsView()
                 .frame(maxHeight: 64)
         }
     }
     
-    private func characterList() -> some View {
+    private func charactersListView() -> some View {
         List(filteredCharacters, id: \.name) { character in
             NavigationLink {
                 CharacterDetailedView(character: character,
@@ -82,7 +87,7 @@ struct CharactersView: View {
         .foregroundColor(CustomColor.white)
     }
     
-    private func numberedPageControls() -> some View {
+    private func numberedPageControlsView() -> some View {
         HStack {
             ChangePageButtonView(pointingDirection: .left,
                                  isDisabled: viewModel.isFirstPage()) {

@@ -13,6 +13,7 @@
 		60D9F9272AE1F9C400B80E77 /* StarWarsEncyclopediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9262AE1F9C400B80E77 /* StarWarsEncyclopediaTests.swift */; };
 		60D9F9312AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */; };
 		60D9F9332AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */; };
+		C72B98562B95196A00D16E86 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B98552B95196A00D16E86 /* LoadingView.swift */; };
 		C74F57BF2B94D59A00A3CEE2 /* ChangePageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74F57BE2B94D59A00A3CEE2 /* ChangePageButtonView.swift */; };
 		C74F57C72B95083B00A3CEE2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74F57C62B95083B00A3CEE2 /* Launch Screen.storyboard */; };
 		C783A1612B40DC6600039328 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1602B40DC6600039328 /* CharactersView.swift */; };
@@ -66,6 +67,7 @@
 		60D9F92C2AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsEncyclopediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITests.swift; sourceTree = "<group>"; };
 		60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C72B98552B95196A00D16E86 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C74F57BE2B94D59A00A3CEE2 /* ChangePageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePageButtonView.swift; sourceTree = "<group>"; };
 		C74F57C62B95083B00A3CEE2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C783A1602B40DC6600039328 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				C783A1602B40DC6600039328 /* CharactersView.swift */,
 				C783A16B2B428D8000039328 /* HomeView.swift */,
 				C783A1692B42257500039328 /* SpaceBackgroundView.swift */,
+				C72B98552B95196A00D16E86 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				C7D63A042B561A9000583C8D /* CustomSystemAlert.swift in Sources */,
 				C783A16C2B428D8000039328 /* HomeView.swift in Sources */,
 				C783A16A2B42257500039328 /* SpaceBackgroundView.swift in Sources */,
+				C72B98562B95196A00D16E86 /* LoadingView.swift in Sources */,
 				C7D639FD2B55DC4100583C8D /* MockJson.swift in Sources */,
 				C7F7C0542B3E888C006C6B5F /* CharacterModel.swift in Sources */,
 				C7B910752B3FF73E00CCEAB4 /* CustomTypography.swift in Sources */,

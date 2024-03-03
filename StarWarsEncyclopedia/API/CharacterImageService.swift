@@ -19,12 +19,6 @@ struct CharacterImageUrlService {
             throw ApiError.invalidResponse
         }
         
-        if let dataString = String(data: data, encoding: .utf8) {
-            print("Received data:", dataString)
-        } else {
-            print("Failed to convert data to string")
-        }
-        
         do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
