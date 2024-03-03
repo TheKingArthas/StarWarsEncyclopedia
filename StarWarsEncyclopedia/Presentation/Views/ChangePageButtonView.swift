@@ -14,6 +14,7 @@ enum PointingDiretion: String {
 
 struct ChangePageButtonView: View {
     let pointingDirection: PointingDiretion
+    let isDisabled: Bool
     let action: () -> ()
     
     var body: some View {
@@ -22,12 +23,15 @@ struct ChangePageButtonView: View {
         } label: {
             Image(systemName: "arrowtriangle.\(pointingDirection).fill")
                 .foregroundColor(CustomColor.white)
+                .disabled(isDisabled)
+                .opacity(isDisabled ? 0.3 : 1.0)
         }
     }
 }
 
 #Preview {
     ChangePageButtonView(pointingDirection: .left,
+                         isDisabled: false,
                          action: {
         print("Button pressed")
     })

@@ -14,16 +14,16 @@ struct CharactersViewModel {
     private var paginatedCharacters: [[Character]] = [[]]
     
     mutating func fetchCharacters() async throws {
-        var currentPage = 1
+        var fetchedCurrentPage = 1
         var lastPageWasReached: Bool = false
         while !lastPageWasReached {
             do {
-                let pageCharacters = try await fetchCharactersFromPage(currentPage)
+                let pageCharacters = try await fetchCharactersFromPage(fetchedCurrentPage)
                 if pageCharacters.isEmpty {
                     lastPageWasReached = true
                 } else {
                     paginatedCharacters.append(pageCharacters)
-                    currentPage += 1
+                    fetchedCurrentPage += 1
                 }
             } catch {
                 throw error

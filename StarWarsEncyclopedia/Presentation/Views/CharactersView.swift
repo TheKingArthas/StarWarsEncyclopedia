@@ -82,17 +82,19 @@ struct CharactersView: View {
     
     private func numberedPageControls() -> some View {
         HStack {
-            ChangePageButtonView(pointingDirection: .left) {
+            ChangePageButtonView(pointingDirection: .left,
+                                 isDisabled: viewModel.currentPage == 1) {
                 viewModel.currentPage -= 1
             }
-            .padding(.leading, 16)
+                                 .padding(.leading, 16)
             Text("\(viewModel.currentPage)")
                 .bodyStyle()
                 .padding(.horizontal, 64)
-            ChangePageButtonView(pointingDirection: .right) {
+            ChangePageButtonView(pointingDirection: .right,
+                                 isDisabled: false) {
                 viewModel.currentPage += 1
             }
-            .padding(.trailing, 16)
+                                 .padding(.trailing, 16)
         }
     }
 }
