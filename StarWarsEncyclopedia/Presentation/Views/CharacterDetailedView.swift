@@ -106,13 +106,13 @@ struct CharacterDetailedView: View {
             CustomImaging.genderMale
                 .resizable()
                 .renderingMode(.template)
-                .foregroundStyle(.white)
+                .foregroundStyle(CustomColor.white)
                 .frame(width: frameSize, height: frameSize)
         case .female:
             CustomImaging.genderFemale
                 .resizable()
                 .renderingMode(.template)
-                .foregroundStyle(.white)
+                .foregroundStyle(CustomColor.white)
                 .frame(width: frameSize, height: frameSize)
         default:
             EmptyView()

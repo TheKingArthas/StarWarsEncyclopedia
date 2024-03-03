@@ -56,12 +56,12 @@ extension Text {
                          font: CustomTypography.h1)
     }
     
-    func bodyStyle(color: Color = .white) -> some View {
+    func bodyStyle(color: Color = CustomColor.white) -> some View {
         self
             .customStyle()
     }
     
-    func customStyleWithSize(color: Color = .white,
+    func customStyleWithSize(color: Color = CustomColor.white,
                              size: CGFloat,
                              lineLimit: Int = 1) -> some View {
         customStyle(color: color,
@@ -69,7 +69,7 @@ extension Text {
                     lineLimit: lineLimit)
     }
     
-    private func customStyle(color: Color = .white,
+    private func customStyle(color: Color = CustomColor.white,
                              font: Font = CustomTypography.body,
                              lineLimit: Int = 1) -> some View {
         self

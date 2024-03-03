@@ -55,7 +55,7 @@ struct CustomCellView: View {
     
     @ViewBuilder
     private func characterAvatarView() -> some View {
-        var avatarImage = characterImage ?? CustomImaging.questionMark
+        let avatarImage = characterImage ?? CustomImaging.questionMark
         avatarImage
             .resizable()
             .scaledToFill()

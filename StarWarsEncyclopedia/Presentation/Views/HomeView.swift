@@ -56,12 +56,12 @@ struct HomeView: View {
         } label: {
             ZStack {
                 Circle()
-                    .fill(Color.starWarsYellow.opacity(0.8))
+                    .fill(CustomColor.starWarsYellow.opacity(0.8))
                     .frame(width: 128)
-                    .shadow(color: Color.starWarsYellow,
+                    .shadow(color: CustomColor.starWarsYellow,
                             radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 Text("START")
-                    .customStyleWithSize(color: Color.black,
+                    .customStyleWithSize(color: CustomColor.black,
                                          size: 24)
             }
         }
