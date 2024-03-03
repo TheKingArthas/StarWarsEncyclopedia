@@ -15,8 +15,14 @@ struct CharacterService {
         
         let (data, response) = try await URLSession.shared.data(from: endpointUrl)
         
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+        guard let response = response as? HTTPURLResponse else {
             throw ApiError.invalidResponse
+        }
+        guard response.statusCode != 404 else {
+            throw ApiError.notFound
+        }
+        guard response.statusCode == 200 else {
+            throw ApiError.unsuccessfullResponse
         }
         
         do {

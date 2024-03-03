@@ -15,8 +15,8 @@ struct CharactersView: View {
     @State private var shouldShowAlert: Bool = false
     
     private var filteredCharacters: [Character] {
-        guard !searchTerm.isEmpty else { return viewModel.characters }
-        return viewModel.characters.filter { $0.name.localizedStandardContains(searchTerm) }
+        guard !searchTerm.isEmpty else { return viewModel.charactersFromCurrentPage }
+        return viewModel.allCharacters.filter { $0.name.localizedStandardContains(searchTerm) }
     }
     
     init(viewModel: CharactersViewModel) {
@@ -35,7 +35,7 @@ struct CharactersView: View {
         }
         .task {
             do {
-                try await viewModel.getCharactersFromCurrentPage()
+                try await viewModel.fetchCharacters()
             } catch {
                 self.error = error
                 shouldShowAlert = true
@@ -83,37 +83,16 @@ struct CharactersView: View {
     private func numberedPageControls() -> some View {
         HStack {
             ChangePageButtonView(pointingDirection: .left) {
-                Task {
-                    await getCharactersFromPreviousPage()
-                }
+                viewModel.currentPage -= 1
             }
             .padding(.leading, 16)
             Text("\(viewModel.currentPage)")
                 .bodyStyle()
                 .padding(.horizontal, 64)
             ChangePageButtonView(pointingDirection: .right) {
-                Task {
-                    await getCharactersFromNextPage()
-                }
-                
+                viewModel.currentPage += 1
             }
             .padding(.trailing, 16)
-        }
-    }
-    
-    private func getCharactersFromPreviousPage() async {
-        do {
-            try await viewModel.getCharactersFromPreviousPage()
-        } catch {
-            print(error)
-        }
-    }
-    
-    private func getCharactersFromNextPage() async {
-        do {
-            try await viewModel.getCharactersFromNextPage()
-        } catch {
-            print(error)
         }
     }
 }

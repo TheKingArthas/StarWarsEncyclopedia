@@ -24,4 +24,6 @@ enum ApiError: Error {
     case invalidData
     case invalidResponse
     case invalidUrl
+    case notFound
+    case unsuccessfullResponse
 }

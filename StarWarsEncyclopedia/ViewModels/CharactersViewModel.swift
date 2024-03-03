@@ -9,18 +9,21 @@ import Foundation
 
 struct CharactersViewModel {
     var currentPage: Int = 1
-    private var characters: [[Character]] = []
+    var allCharacters: [Character] { paginatedCharacters.flatMap{ $0 } }
+    var charactersFromCurrentPage: [Character] { getCharactersFromPage(currentPage) }
+    private var paginatedCharacters: [[Character]] = [[]]
     
     mutating func fetchCharacters() async throws {
-        var startingPage = 1
-        
-        for currentPage in startingPage... {
+        var currentPage = 1
+        var lastPageWasReached: Bool = false
+        while !lastPageWasReached {
             do {
                 let pageCharacters = try await fetchCharactersFromPage(currentPage)
                 if pageCharacters.isEmpty {
-                    break
+                    lastPageWasReached = true
                 } else {
-                    characters[currentPage] = pageCharacters
+                    paginatedCharacters.append(pageCharacters)
+                    currentPage += 1
                 }
             } catch {
                 throw error
@@ -28,9 +31,6 @@ struct CharactersViewModel {
         }
     }
     
-    func getCharactersFromPage(_ pageNumber: Int) -> [Character] {
-        characters[pageNumber]
-    }
     
     func fetchCharacterImageUrl(_ character: Character) async -> URL? {
         do {
@@ -41,14 +41,24 @@ struct CharactersViewModel {
         }
     }
     
+    private func getCharactersFromPage(_ pageNumber: Int) -> [Character] {
+        if 1 <= pageNumber && pageNumber < paginatedCharacters.count {
+            paginatedCharacters[pageNumber]
+        } else {
+            []
+        }
+    }
+    
     private mutating func fetchCharactersFromPage(_ pageNumber: Int) async throws -> [Character] {
-        var characters: [Character] = []
         do {
+            var characters: [Character] = []
             let charactersModels = try await CharacterService().fetchCharactersFromPage(pageNumber)
             charactersModels.forEach { model in
                 characters.append(Character(model: model))
             }
             return characters
+        } catch ApiError.notFound {
+            return []
         } catch {
             throw error
         }
