@@ -40,7 +40,7 @@ class CharactersViewModel: ObservableObject {
         do {
             return try await CharacterImageUrlService().fetchCharacterImageUrl(name: character.name)
         } catch {
-            print(error)
+            print("Fetching character image for \(character.name) failed with error: \(error)")
             return nil
         }
     }

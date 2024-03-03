@@ -32,7 +32,7 @@ struct CharacterDetailedView: View {
                             characterImage = Image(uiImage: UIImage(data: imageData)!)
                         }
                     } catch {
-                        print("Error fetching character image: \(error)")
+                        print("Fetching character image for \(character.name) failed with error: \(error)")
                     }
                 }
             }

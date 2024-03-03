@@ -27,15 +27,16 @@ struct CustomCellView: View {
                 Task {
                     do {
                         if let imageUrl = await charactersViewModel.fetchCharacterImageUrl(character) {
-                            let imageData = try Data(contentsOf: imageUrl)
-                            characterImage = Image(uiImage: UIImage(data: imageData)!)
+                            let (data, _) = try await URLSession.shared.data(from: imageUrl)
+                            if let characterUiImage = UIImage(data: data) {
+                                characterImage = Image(uiImage: characterUiImage)
+                            }
                         }
                     } catch {
                         print("Error fetching character image: \(error)")
                     }
                 }
             }
-        
     }
     
     private var mainView: some View {
