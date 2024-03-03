@@ -26,7 +26,7 @@ struct CustomCellView: View {
                 startAvatarRotation()
                 Task {
                     do {
-                        if let imageUrl = await charactersViewModel.getCharacterImageUrl(character) {
+                        if let imageUrl = await charactersViewModel.fetchCharacterImageUrl(character) {
                             let imageData = try Data(contentsOf: imageUrl)
                             characterImage = Image(uiImage: UIImage(data: imageData)!)
                         }

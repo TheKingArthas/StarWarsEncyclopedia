@@ -8,40 +8,47 @@
 import Foundation
 
 struct CharactersViewModel {
-    var characters: [Character] = []
     var currentPage: Int = 1
+    private var characters: [[Character]] = []
     
-    mutating func getCharactersFromCurrentPage() async throws {
-        try await getCharactersFromPage(pageNumber: currentPage)
-    }
-    
-    mutating func getCharactersFromPreviousPage() async throws {
-        currentPage += 1
-        try await getCharactersFromPage(pageNumber: currentPage)
-    }
-    
-    mutating func getCharactersFromNextPage() async throws {
-        if currentPage > 1 {
-            currentPage -= 1
-            try await getCharactersFromPage(pageNumber: currentPage)
+    mutating func fetchCharacters() async throws {
+        var startingPage = 1
+        
+        for currentPage in startingPage... {
+            do {
+                let pageCharacters = try await fetchCharactersFromPage(currentPage)
+                if pageCharacters.isEmpty {
+                    break
+                } else {
+                    characters[currentPage] = pageCharacters
+                }
+            } catch {
+                throw error
+            }
         }
     }
     
-    func getCharacterImageUrl(_ character: Character) async -> URL? {
+    func getCharactersFromPage(_ pageNumber: Int) -> [Character] {
+        characters[pageNumber]
+    }
+    
+    func fetchCharacterImageUrl(_ character: Character) async -> URL? {
         do {
-            return try await CharacterImageUrlService().getCharacterImageUrl(name: character.name)
+            return try await CharacterImageUrlService().fetchCharacterImageUrl(name: character.name)
         } catch {
             print(error)
             return nil
         }
     }
     
-    private mutating func getCharactersFromPage(pageNumber: Int) async throws {
+    private mutating func fetchCharactersFromPage(_ pageNumber: Int) async throws -> [Character] {
+        var characters: [Character] = []
         do {
-            let charactersModels = try await CharacterService().getCharactersFromPage(pageNumber)
+            let charactersModels = try await CharacterService().fetchCharactersFromPage(pageNumber)
             charactersModels.forEach { model in
                 characters.append(Character(model: model))
             }
+            return characters
         } catch {
             throw error
         }

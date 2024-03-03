@@ -8,7 +8,7 @@
 import Foundation
 
 struct CharacterImageUrlService {
-    func getCharacterImageUrl(name: String) async throws -> URL? {
+    func fetchCharacterImageUrl(name: String) async throws -> URL? {
         guard let endpointUrl = Endpoint.characterImage(characterName: name) else {
             throw ApiError.invalidUrl
         }
