@@ -8,8 +8,8 @@
 import Foundation
 
 struct Endpoint {
-    static func characters() -> URL? {
-        URL(string: "https://swapi.dev/api/people")
+    static func charactersFromPage(_ pageNumber: Int) -> URL? {
+        URL(string: "https://swapi.dev/api/people/?page=\(pageNumber)")
     }
     
     static func characterImage(characterName: String) -> URL? {

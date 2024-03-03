@@ -8,16 +8,22 @@
 import Foundation
 
 struct CharactersViewModel {
-    private(set) var characters: [Character] = []
+    var characters: [Character] = []
+    var currentPage: Int = 1
     
-    mutating func getCharacters() async throws {
-        do {
-            let charactersModels = try await CharacterService().getCharacters()
-            charactersModels.forEach { model in
-                characters.append(Character(model: model))
-            }
-        } catch {
-            throw error
+    mutating func getCharactersFromCurrentPage() async throws {
+        try await getCharactersFromPage(pageNumber: currentPage)
+    }
+    
+    mutating func getCharactersFromPreviousPage() async throws {
+        currentPage += 1
+        try await getCharactersFromPage(pageNumber: currentPage)
+    }
+    
+    mutating func getCharactersFromNextPage() async throws {
+        if currentPage > 1 {
+            currentPage -= 1
+            try await getCharactersFromPage(pageNumber: currentPage)
         }
     }
     
@@ -27,6 +33,17 @@ struct CharactersViewModel {
         } catch {
             print(error)
             return nil
+        }
+    }
+    
+    private mutating func getCharactersFromPage(pageNumber: Int) async throws {
+        do {
+            let charactersModels = try await CharacterService().getCharactersFromPage(pageNumber)
+            charactersModels.forEach { model in
+                characters.append(Character(model: model))
+            }
+        } catch {
+            throw error
         }
     }
 }

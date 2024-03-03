@@ -9,6 +9,10 @@ import Foundation
 
 struct CharactersModels: Codable {
     let results: [CharacterModel]
+    
+    enum CodingKeys: String, CodingKey {
+        case results
+    }
 }
 
 struct CharacterModel: Codable {

@@ -8,8 +8,8 @@
 import Foundation
 
 struct CharacterService {
-    func getCharacters() async throws -> [CharacterModel] {
-        guard let endpointUrl = Endpoint.characters() else {
+    func getCharactersFromPage(_ pageNumber: Int) async throws -> [CharacterModel] {
+        guard let endpointUrl = Endpoint.charactersFromPage(pageNumber) else {
             throw ApiError.invalidUrl
         }
         

@@ -35,7 +35,7 @@ struct CharactersView: View {
         }
         .task {
             do {
-                try await viewModel.getCharacters()
+                try await viewModel.getCharactersFromCurrentPage()
             } catch {
                 self.error = error
                 shouldShowAlert = true
