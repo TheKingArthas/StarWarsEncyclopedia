@@ -61,23 +61,23 @@ struct CharacterDetailedView: View {
         VStack(alignment: .leading, spacing: 8) {
             if character.gender != .other {
                 HStack {
-                    Text("Gender: ")
+                    Text(localizedStringKey: "characterDetailedGender")
                         .bodyStyle()
                         .padding(.leading, -3)
                     genderImageView(character.gender)
                 }
             }
-            Text("Birth year: \(character.birthYear)")
+            Text(localizedStringKey: "characterDetailedBirth", argument: "\(character.birthYear)")
                 .bodyStyle()
-            Text("Height: \(character.height)")
+            Text(localizedStringKey: "characterDetailedHeight", argument: "\(character.height)")
                 .bodyStyle()
-            Text("Weight: \(character.weight)")
+            Text(localizedStringKey: "characterDetailedWeight", argument: "\(character.weight)")
                 .bodyStyle()
-            Text("Hair color: \(character.hairColor)")
+            Text(localizedStringKey: "characterDetailedHair", argument: "\(character.hairColor)")
                 .bodyStyle()
-            Text("Skin color: \(character.skinColor)")
+            Text(localizedStringKey: "characterDetailedSkin", argument: "\(character.skinColor)")
                 .bodyStyle()
-            Text("Eyes color: \(character.eyesColor)")
+            Text(localizedStringKey: "characterDetailedEyes", argument: "\(character.eyesColor)")
                 .bodyStyle()
         }
     }

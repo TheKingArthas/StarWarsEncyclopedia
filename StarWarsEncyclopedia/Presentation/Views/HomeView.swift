@@ -40,10 +40,10 @@ struct HomeView: View {
     
     private func titleView() -> some View {
         VStack {
-            Text("Star Wars")
+            Text(NSLocalizedString("homeStarWarsTitle", comment: ""))
                 .titleStyle()
                 .padding(.bottom, 16)
-            Text("Characters \nencyclopedia")
+            Text(NSLocalizedString("homeSubtitle", comment: ""))
                 .subtitleStyle()
         }
         .padding(.horizontal, 16)
@@ -59,12 +59,11 @@ struct HomeView: View {
                     .frame(width: 128)
                     .shadow(color: CustomColor.starWarsYellow,
                             radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                Text("START")
+                Text(NSLocalizedString("homeStartButton", comment: ""))
                     .customStyleWithSize(color: CustomColor.black,
                                          size: 24)
             }
         }
-        
     }
 }
 

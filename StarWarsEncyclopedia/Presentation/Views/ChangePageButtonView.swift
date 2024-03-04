@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-enum PointingDiretion: String {
+enum PointingDirection: String {
     case left
     case right
 }
 
 struct ChangePageButtonView: View {
-    let pointingDirection: PointingDiretion
+    let pointingDirection: PointingDirection
     let isDisabled: Bool
     let action: () -> ()
     

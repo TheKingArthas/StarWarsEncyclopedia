@@ -14,6 +14,8 @@
 		60D9F9312AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */; };
 		60D9F9332AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */; };
 		C72B98562B95196A00D16E86 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B98552B95196A00D16E86 /* LoadingView.swift */; };
+		C72B985C2B9554C200D16E86 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C72B985B2B9554C200D16E86 /* Localizable.strings */; };
+		C72B985E2B95593D00D16E86 /* TextLocalizationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B985D2B95593D00D16E86 /* TextLocalizationExtension.swift */; };
 		C74F57BF2B94D59A00A3CEE2 /* ChangePageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74F57BE2B94D59A00A3CEE2 /* ChangePageButtonView.swift */; };
 		C74F57C72B95083B00A3CEE2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74F57C62B95083B00A3CEE2 /* Launch Screen.storyboard */; };
 		C783A1612B40DC6600039328 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C783A1602B40DC6600039328 /* CharactersView.swift */; };
@@ -68,6 +70,8 @@
 		60D9F9302AE1F9C400B80E77 /* StarWarsEncyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITests.swift; sourceTree = "<group>"; };
 		60D9F9322AE1F9C400B80E77 /* StarWarsEncyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsEncyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C72B98552B95196A00D16E86 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C72B985B2B9554C200D16E86 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		C72B985D2B95593D00D16E86 /* TextLocalizationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLocalizationExtension.swift; sourceTree = "<group>"; };
 		C74F57BE2B94D59A00A3CEE2 /* ChangePageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePageButtonView.swift; sourceTree = "<group>"; };
 		C74F57C62B95083B00A3CEE2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C783A1602B40DC6600039328 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
@@ -181,6 +185,14 @@
 			path = StarWarsEncyclopediaUITests;
 			sourceTree = "<group>";
 		};
+		C72B985F2B955D4500D16E86 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C72B985D2B95593D00D16E86 /* TextLocalizationExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		C783A1682B4156D700039328 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,8 +266,9 @@
 				C7F7C05E2B3E9073006C6B5F /* CharacterDetailedView.swift */,
 				C783A1602B40DC6600039328 /* CharactersView.swift */,
 				C783A16B2B428D8000039328 /* HomeView.swift */,
-				C783A1692B42257500039328 /* SpaceBackgroundView.swift */,
 				C72B98552B95196A00D16E86 /* LoadingView.swift */,
+				C783A1692B42257500039328 /* SpaceBackgroundView.swift */,
+				C72B985F2B955D4500D16E86 /* Utils */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 				C7B910742B3FF73E00CCEAB4 /* CustomTypography.swift */,
 				C7F7C0612B3EA27D006C6B5F /* Fonts */,
 				C74F57C62B95083B00A3CEE2 /* Launch Screen.storyboard */,
+				C72B985B2B9554C200D16E86 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -385,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C72B985C2B9554C200D16E86 /* Localizable.strings in Resources */,
 				60D9F91D2AE1F9C300B80E77 /* Preview Assets.xcassets in Resources */,
 				C7F7212C2B917DD000F71288 /* SoloistStraight.otf in Resources */,
 				C74F57C72B95083B00A3CEE2 /* Launch Screen.storyboard in Resources */,
@@ -414,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7F7C05B2B3E8B33006C6B5F /* StructGenerator.swift in Sources */,
+				C72B985E2B95593D00D16E86 /* TextLocalizationExtension.swift in Sources */,
 				C783A1712B4294FD00039328 /* NavigationBarConfiguration.swift in Sources */,
 				C7D63A042B561A9000583C8D /* CustomSystemAlert.swift in Sources */,
 				C783A16C2B428D8000039328 /* HomeView.swift in Sources */,

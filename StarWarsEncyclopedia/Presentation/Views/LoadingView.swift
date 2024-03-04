@@ -12,7 +12,7 @@ struct LoadingView: View {
         ZStack {
             CustomColor.black.opacity(0.8)
             ProgressView {
-                Text("Transmitting data from the Rebel Alliance...")
+                Text(localizedStringKey: "loadingMessage")
                     .customStyleWithSize(size: 16,
                                          lineLimit: 2)
             }

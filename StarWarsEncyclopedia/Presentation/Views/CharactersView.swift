@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharactersView: View {
-    private static var navigationTitle = "Characters"
+    private static var navigationTitle = NSLocalizedString("charactersNavigationTitle", comment: "")
     @ObservedObject var viewModel: CharactersViewModel
     @State private var searchTerm: String
     @State private var error: Error?
@@ -82,7 +82,7 @@ struct CharactersView: View {
         }
         .scrollContentBackground(.hidden)
         .listRowSpacing(8)
-        .searchable(text: $searchTerm, prompt: "Search Character")
+        .searchable(text: $searchTerm, prompt: NSLocalizedString("charactersSearchBar", comment: ""))
         .font(CustomTypography.body)
         .foregroundColor(CustomColor.white)
     }
