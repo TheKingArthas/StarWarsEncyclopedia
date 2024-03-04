@@ -63,6 +63,7 @@ struct CharacterDetailedView: View {
                 HStack {
                     Text("Gender: ")
                         .bodyStyle()
+                        .padding(.leading, -3)
                     genderImageView(character.gender)
                 }
             }
