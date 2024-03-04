@@ -20,9 +20,9 @@
 "characterDetailedEyes" = "Eyes color: %@";
 "characterDetailedGender" = "Gender: ";
 "characterDetailedHair" = "Hair color: %@";
-"characterDetailedHeight" = "Height: %@";
+"characterDetailedHeight" = "Height: %@ cms";
 "characterDetailedSkin" = "Skin color: %@";
-"characterDetailedWeight" = "Weight: %@";
+"characterDetailedWeight" = "Weight: %@ kg";
 
 /* Loading */
 "loadingMessage" = "Transmitting data from the Rebel Alliance...";
