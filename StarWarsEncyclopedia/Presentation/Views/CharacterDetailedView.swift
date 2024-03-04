@@ -28,8 +28,10 @@ struct CharacterDetailedView: View {
                 Task {
                     do {
                         if let imageUrl = await charactersViewModel.fetchCharacterImageUrl(character) {
-                            let imageData = try Data(contentsOf: imageUrl)
-                            characterImage = Image(uiImage: UIImage(data: imageData)!)
+                            let (data, _) = try await URLSession.shared.data(from: imageUrl)
+                            if let characterUiImage = UIImage(data: data) {
+                                characterImage = Image(uiImage: characterUiImage)
+                            }
                         }
                     } catch {
                         print("Fetching character image for \(character.name) failed with error: \(error)")
